@@ -48,6 +48,8 @@ body {
   border-color: deepskyblue;
 }
 
-.custom-home {
-  height: 75vh;
+@media (min-width: 768px) {
+  .custom-home {
+    height: 60vh;
+  }
 }
