@@ -1,5 +1,6 @@
 import React from 'react';
 import heroImg from '../assets/Willie.png';
+import middleImg from '../assets/icons/output-onlinepngtools (3).png';
 
 const Home = () => {
     return (
@@ -18,6 +19,9 @@ const Home = () => {
                         </div>
                     </div>
                     {/* img */}
+                    <div className='order-first md:order-last relativo'>
+                        <img src={middleImg} alt="" />
+                    </div>
                     <div className='order-first md:order-last relative'>
                         <img src={heroImg} alt="" />
                     </div>

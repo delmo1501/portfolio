@@ -21,7 +21,9 @@ const About = () => {
       <div className="md:flex my-7 items-center">
         <div className="text-primary text-8xl font-bold">2+</div>
         <p className="text-white text-2xl md:ml-5">Years of experience. Specialised in building apps,
-             while providing a good customer experience, within my team and a good working environment to move the project forward </p>
+             while providing a good customer
+             <br/>
+             experience, within my team and a good working environment to move the project forward </p>
       </div>
       {/* skills card */}
       <div className="flex flex-col md:flex-row ">

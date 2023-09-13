@@ -1,41 +1,56 @@
 import React from 'react';
+import { Link } from 'react-scroll';
 
 const Projects = () => {
-
   const projects = [
     {
-      title: 'Stark' ,
-      description: 'Project in function of showing a summary and overview of the company, manipulating financial, economic and humanities metrics. ',
+      title: 'Stark',
+      description:
+        'Project in function of showing a summary and overview of the company, manipulating financial, economic and humanities metrics.',
       photo: '/src/assets/icons/now-ui-dashboard-react.jpg',
     },
     {
       title: 'PPMS - ProServ',
-      description: 'Recruitment system for sharing candidates, information, metrics between companies like ProServ, Michelin, LGI, etc',
-      photo: '/src/assets/icons/proservppms.png',
+      description:
+        'Recruitment system for sharing candidates, information, metrics between companies like ProServ, Michelin, LGI, etc',
+      photo: '/src/assets/projects/andsfklasd.png',
     },
     {
       title: 'Airbus Ticket System',
       description: 'Airbus buddy ticket system, internal communication',
-      photo: '/src/assets/icons/Screenshot 2023-09-13 at 13.40.18.png',
+      photo: '/src/assets/projects/Screenshot 2023-09-13 at 14.32.29.png',
     },
   ];
+
   return (
-    <div className="px-7 md:px-10 my-8" id="projects">
-      <h1 className="text-3xl mt-5 text-primary font-semibold">Projects & Experiences:</h1>
-      <p className="text-white my-2 md:w-2/3 leading-[2]">I have worked on many projects over the course of being System Developer,
-        im gonna include my biggest ones, that were for the companies i've been working</p>
+    <div className="md:px-10 px-7 my-8" id="projects">
+      <h1 className="text-primary font-semibold text-3xl mt-16">Projects & Experiences:</h1>
+      <p className="my-3 text-white md:w-3/4 leading-[2]">
+        I have worked on many projects over the course of being a System Developer, and I'm going to include my biggest
+        ones, that were for the companies I've been working.
+      </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-5 my-6 items-center justify-center">
-        {
-          projects.map((project, index) => <div key={index} className="flex flex-col shadow-sm md:w-[343px] bg-[#31313f] rounded p-4">
-            <a href={project.photo} className="mb-4"><img src={project.photo} alt="" /></a>
+        {projects.map((project, index) => (
+          <div
+            key={index}
+            className="flex flex-col shadow-sm md:w-[343px] bg-[#31313F] p-4 rounded"
+            style={{ flex: '1', minWidth: '300px', maxWidth: '343px', height: '100%', flexDirection: 'column', justifyContent: 'space-between' }} // Added styles here
+          >
+            <a href={project.photo} target="_blank" rel="noreferrer" className="mb-4">
+              <img src={project.photo} alt={project.title} />
+            </a>
             <h3 className="text-primary font-semibold text-lg">{project.title}</h3>
             <p className="text-white mt-1">{project.description}</p>
             <div className="mt-5">
-              <button className="btn bg-primary py-2 px-4 text-white rounded hover:bg:white hover:text-primary transition-all duration-500">About me</button>
-              <button className="btn outline py-1.5 px-9 text-white rounded border-none ml-5">Projects</button>
+              <Link to="about" smooth={true} duration={500} className="btn transition-all duration-500 bg-primary py-2 px-6 rounded text-white hover:bg-white hover:text-primary">
+                About me
+              </Link>
+              <Link to="projects" smooth={true} duration={500} className="btn outline py-1.5 px-9 rounded border-none ml-5 text-white">
+                Projects
+              </Link>
             </div>
-          </div>)
-        }
+          </div>
+        ))}
       </div>
     </div>
   );
