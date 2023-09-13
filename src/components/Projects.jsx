@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-scroll';
+import photo1 from '../assets/icons/now-ui-dashboard-react.jpg';
+import photo2 from '../assets/projects/andsfklasd.png';
+import photo3 from '../assets/projects/Screenshot 2023-09-13 at 14.32.29.png';
 
 const Projects = () => {
   const projects = [
@@ -7,18 +10,18 @@ const Projects = () => {
       title: 'Stark',
       description:
         'Project in function of showing a summary and overview of the company, manipulating financial, economic and humanities metrics.',
-      photo: '/src/assets/icons/now-ui-dashboard-react.jpg',
+      photo: {photo1},
     },
     {
       title: 'PPMS - ProServ',
       description:
         'Recruitment system for sharing candidates, information, metrics between companies like ProServ, Michelin, LGI, etc',
-      photo: '/src/assets/projects/andsfklasd.png',
+      photo: {photo2},
     },
     {
       title: 'Airbus Ticket System',
       description: 'Airbus buddy ticket system, internal communication',
-      photo: '/src/assets/projects/Screenshot 2023-09-13 at 14.32.29.png',
+      photo: {photo3},
     },
   ];
 
