@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Services from './Services';
 
 const About = () => {
 
@@ -26,12 +27,14 @@ const About = () => {
       {/* skills card */}
       <div className="flex flex-col md:flex-row">
         {skills.map((skill, index) => (
-          <div key={index}>
+          <div key={index} className="skills md:w-[296px] md:h-[254px] bg-light
+          hover:bg-primary flex flex-col items-baseline justify-end my-3 md:m-3 p-5 shadow-sm transition-all duration-500">
             <img src={skill.image} alt="" />
             <p className="text-2xl mt-3 text-white font-semibold">{skill.name}</p>
           </div>
         ))}
       </div>
+      <Services />
     </div>
   );
 };
