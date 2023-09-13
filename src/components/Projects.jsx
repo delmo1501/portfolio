@@ -10,18 +10,18 @@ const Projects = () => {
       title: 'Stark',
       description:
         'Project in function of showing a summary and overview of the company, manipulating financial, economic and humanities metrics.',
-      photo: {photo1},
+      photo: photo1,
     },
     {
       title: 'PPMS - ProServ',
       description:
         'Recruitment system for sharing candidates, information, metrics between companies like ProServ, Michelin, LGI, etc',
-      photo: {photo2},
+      photo: photo2,
     },
     {
       title: 'Airbus Ticket System',
       description: 'Airbus buddy ticket system, internal communication',
-      photo: {photo3},
+      photo: photo3,
     },
   ];
 
