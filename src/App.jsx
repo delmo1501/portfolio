@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 
 const App = () => {
   return (
-      <div className='max-w-7x1 mx-auto'>
+      <div className='max-w-7xl mx-auto'>
         <Header />
         <Home />
         <About />
