@@ -1,12 +1,16 @@
 import React from 'react';
 import Services from './Services';
+import photo1 from '../../src/assets/icons/code.png';
+import photo2 from '../../src/assets/icons/output-onlinepngtools.png';
+import photo3 from '../../src/assets/icons/output-onlinepngtools (1).png';
+import photo4 from '../../src/assets/icons/git-repo.png';
 
 const About = () => {
   const skills = [
-    {name: 'FULL STACK DEVELOPMENT', image:'/src/assets/icons/code.png'},
-    {name: 'MAIN STACK', image:'/src/assets/icons/output-onlinepngtools.png'},
-    {name: 'BACK END', image:'/src/assets/icons/output-onlinepngtools (1).png'},
-    {name: 'REST', image:'/src/assets/icons/git-repo.png'},
+    {name: 'FULL STACK DEVELOPMENT', image:photo1},
+    {name: 'MAIN STACK', image:photo2},
+    {name: 'BACK END', image:photo3},
+    {name: 'REST', image:photo4},
   ];
   return (
     <div className="md:px-10 px-7 sm:-mt-44" id="about">
