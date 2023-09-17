@@ -1,10 +1,10 @@
 import React from 'react';
 import heroImg from '../assets/Willie.png';
-import middleImg from '../assets/icons/output-onlinepngtools (3).png';
+import middleImg from '../assets/icons/output-onlinepngtools (3).jpeg';
 
 const Home = () => {
     return (
-        <div className='md:px-10 px-7 my-14 bg-[#1a1a29] custom-home' id='home'>
+        <div className='md:px-10 px-7 my-14 bg-[#161616] custom-home' id='home'>
             <div>
                 <div className='flex flex-col md:flex-row items-center justify-between w-full'>
                     {/* image & content */}
@@ -27,7 +27,9 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div className='h-24 bg-[#181824] w-full mx-auto absolute left-0 hidden md:block'>
+            <br />
+            <br />
+            <div className='h-24 bg-[#13131c] w-full mx-auto absolute left-0 hidden md:block'>
             </div>
         </div>
     );

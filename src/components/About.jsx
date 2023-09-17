@@ -6,6 +6,7 @@ import photo3 from '../../src/assets/icons/output-onlinepngtools (1).png';
 import photo4 from '../../src/assets/icons/git-repo.png';
 import MyModal from './Modal';
 import Button from '@mui/material/Button';
+import ImageButton from './ImageButton';
 
 
 const About = () => {
@@ -26,6 +27,8 @@ const About = () => {
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
+
+  
   return (
     <div className="md:px-10 px-7 sm:-mt-44" id="about">
       <h1 className="text-primary font-semibold text-3xl mt-5">About me:</h1>
@@ -43,33 +46,7 @@ const About = () => {
              <br/>
              experience, within my team and a good working environment to move the project forward </p>
       </div>
-      {/* skills card */}
-      <div className="flex flex-col md:flex-row ">
-        {skills.map((skill, index) => (
-          <div
-            key={index}
-            className={`md:w-[256px] md:h-[254px] bg-primary hover:bg-deepskyblue flex flex-col items-baseline justify-end md:m-3 my-3 p-5 shadow-sm skills transition-all duration-500 ${
-              index === hoveredIndex ? 'hovered' : ''
-            }`}
-            onMouseEnter={() => setHoveredIndex(index)}
-            onMouseLeave={() => setHoveredIndex(null)}
-          >
-            {index === hoveredIndex && (
-                <Button onClick={() => handleCardClick(index)} variant="contained" color="primary">CLICK ME!</Button>
-            )}
-            <img src={skill.image} alt={skill.name} />
-            <p className="mt-3 text-2xl text-white font-semibold">{skill.name}</p>
-          </div>
-        ))}
-        {isModalOpen && selectedSkill !== null && (
-          <MyModal
-            isOpen={isModalOpen}
-            onClose={handleCloseModal}
-            title={skills[selectedSkill].name}
-            content={`This is the content for ${skills[selectedSkill].name}`}
-          />
-        )}
-      </div>
+      <ImageButton />
       <Services />
     </div>
   );

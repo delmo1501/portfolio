@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
 body {
   font-family: "Poppins", sans-serif;
-  background: #1a1a29;
+  background: #161616;
 }
 
 .btn1 {
-  background: #290ccb;
+  background: #0c2f60;
   border-radius: 8px;
   padding: 10px 30px;
   color: white;
@@ -13,11 +13,11 @@ body {
 
 .btn1:hover {
   background: white;
-  color: #290ccb;
+  color: rgb(22, 22, 126);
 }
 
 .outline {
-  outline-color: #290ccb;
+  outline-color: rgb(15, 15, 78);
 }
 
 .outline:hover {
@@ -50,14 +50,19 @@ body {
     height: 120vh;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 768px ) {
   .custom-home {
     height: 60vh;
   }
 }
-@media (min-width: 850px) {
+@media (min-width: 1000px) {
   .custom-home {
-    height: 70vh;
+    height: 60vh;
+  }
+}
+@media (min-width: 1100px) {
+  .custom-home {
+    height: 60vh;
   }
 }
 
@@ -74,7 +79,7 @@ body {
 }
 
 .skills.hovered {
-  background: blue;
+  background: rgb(22, 22, 126);
   transform: translateY(-10px); /* Adjust the translation as needed */
   color: #47b9ee; /* Change to your primary color */
 }

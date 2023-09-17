@@ -36,7 +36,7 @@ const Projects = () => {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="flex flex-col shadow-sm md:w-[343px] bg-[#31313F] p-4 rounded"
+            className="flex flex-col shadow-sm md:w-[343px] bg-[#0c2f60] p-4 rounded"
             style={{ flex: '1', minWidth: '300px', maxWidth: '343px', height: '100%', flexDirection: 'column', justifyContent: 'space-between' }} // Added styles here
           >
             <a href={project.photo} target="_blank" rel="noreferrer" className="mb-4">
