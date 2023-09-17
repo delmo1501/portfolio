@@ -5,7 +5,7 @@ body {
 }
 
 .btn1 {
-  background: #7562e0;
+  background: #290ccb;
   border-radius: 8px;
   padding: 10px 30px;
   color: white;
@@ -13,11 +13,11 @@ body {
 
 .btn1:hover {
   background: white;
-  color: #7562e0;
+  color: #290ccb;
 }
 
 .outline {
-  outline-color: #7562e0;
+  outline-color: #290ccb;
 }
 
 .outline:hover {
@@ -25,17 +25,14 @@ body {
 }
 
 .skills:first-child {
-  background: #7562e0;
+  background: #290ccb;
 }
 
-.skills:first-child:hover {
-  background: #bdbdbd;
-}
 .service-card {
   width: auto;
   height: 338px;
   background: transparent;
-  border: 3px solid #7562e0;
+  border: 3px solid #290ccb;
   filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.2));
   border-radius: 16px;
 }
@@ -48,8 +45,41 @@ body {
   border-color: deepskyblue;
 }
 
+@media (min-width: 650px) {
+  .custom-home {
+    height: 120vh;
+  }
+}
 @media (min-width: 768px) {
   .custom-home {
     height: 60vh;
   }
+}
+@media (min-width: 850px) {
+  .custom-home {
+    height: 70vh;
+  }
+}
+
+.skills {
+  /* ... existing styles ... */
+  color: #fff; /* Set the initial text color */
+
+  /* Add these transition properties to smoothly transition the color */
+  transition-property: transform, background-color, color;
+  transition-duration: 0.3s; /* Adjust the duration as needed */
+  transition-timing-function: ease-in-out;
+  transform-origin: center bottom;
+  transform: translateY(0);
+}
+
+.skills.hovered {
+  background: blue;
+  transform: translateY(-10px); /* Adjust the translation as needed */
+  color: #47b9ee; /* Change to your primary color */
+}
+
+.skills.hovered p {
+  color: #47b9ee;
+  
 }
