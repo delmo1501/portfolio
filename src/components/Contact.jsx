@@ -18,10 +18,10 @@ const Contact = () => {
       </p>
       {/* social icons */}
       <div className="flex ">
-        <a href="https://www.linkedin.com/in/joshua-harris-321a24190/" target="_blank" rel="noreferrer">
+        <a href="https://www.linkedin.com/in/bruno-delmoro-63b92b201/" target="_blank" rel="noreferrer">
           <img src={facebook} alt="" />
         </a>
-        <a className="ml-4" href="https://instagram.com/joshua-harris" target="_blank" rel="noreferrer">
+        <a className="ml-4" href="https://instagram.com/bruno.delmo" target="_blank" rel="noreferrer">
         <img src={instagram} alt="" />
         </a>
         <a className="ml-4" href="https://github.com/delmo1501" target="_blank" rel="noreferrer">
