@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import Services from './Services';
-import photo1 from '../../src/assets/icons/code.png';
-import photo2 from '../../src/assets/icons/output-onlinepngtools.png';
-import photo3 from '../../src/assets/icons/output-onlinepngtools (1).png';
-import photo4 from '../../src/assets/icons/git-repo.png';
+import photo1 from '../../public/assets/icons/code.png';
+import photo2 from '../../public/assets/icons/output-onlinepngtools.png';
+import photo3 from '../../public/assets/icons/output-onlinepngtools (1).png';
+import photo4 from '../../public/assets/icons/git-repo.png';
 import MyModal from './Modal';
 import Button from '@mui/material/Button';
 import ImageButton from './ImageButton';

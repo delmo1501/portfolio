@@ -1,9 +1,9 @@
-import photo1 from '../src/assets/icons/output-onlinepngtools.png';
-import photo2 from '../src/assets/icons/output-onlinepngtools (1).png';
-import photo3 from '../src/assets/icons/android.png';
-import photo4 from '../src/assets/icons/git-repo.png';
-import photo5 from '../src/assets/icons/javascript.png';
-import photo6 from '../src/assets/icons/web-scraping.png';
+import photo1 from './assets/icons/output-onlinepngtools.png';
+import photo2 from './assets/icons/output-onlinepngtools (1).png';
+import photo3 from './assets/icons/android.png';
+import photo4 from './assets/icons/git-repo.png';
+import photo5 from './assets/icons/javascript.png';
+import photo6 from './assets/icons/web-scraping.png';
 const services = [
     {id: 1, name:'WEB DEVELOPMENT', description:'I create beautiful iterfaces with simple HTML, CSS, & JavaScript and also frameworks like ReactJS and NextJS', image: photo1},
     {id:2, name:'BACK END', description:'Understanding of REST APIs, creating them through NodeJs, either using Express or NestJS, maintenance, best practices and high understanding of solutions', image: photo2},

@@ -1,6 +1,6 @@
 import React from 'react';
-import heroImg from '../assets/Willie.png';
-import middleImg from '../assets/icons/output-onlinepngtools (3).jpeg';
+import heroImg from '../../public/assets/Willie.png';
+import middleImg from '../../public/assets/icons/output-onlinepngtools (3).jpeg';
 
 const Home = () => {
     return (

@@ -4,24 +4,25 @@ import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
 import Typography from '@mui/material/Typography';
 
+
 const images = [
   {
-    url: '/src/assets/icons/fullstack.jpeg',
+    url: '../../public/assets/icons/fullstack.jpeg',
     title: 'Full Stack',
     width: '25%',
   },
   {
-    url: '/src/assets/icons/reactjs.png',
+    url: '../assets/icons/reactjs.png',
     title: 'Main Stack',
     width: '25%',
   },
   {
-    url: '/src/assets/icons/nodejs.png',
+    url: '../assets/icons/nodejs.png',
     title: 'Backend',
     width: '25%',
   },
   {
-    url: '/src/assets/icons/SCRUM.webp',
+    url: '../assets/icons/SCRUM.webp',
     title: 'Rest',
     width: '25%',
   },

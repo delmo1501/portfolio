@@ -1,8 +1,8 @@
 import React from "react";
-import facebook from "../assets/socials/facebook.png";
-import instagram from "../assets/socials/instagram.png";
-import dribbble from "../assets/socials/dribbble.png";
-import email from "../assets/socials/sms.png";
+import facebook from "../../public/assets/socials/facebook.png";
+import instagram from "../../public/assets/socials/instagram.png";
+import dribbble from "../../public/assets/socials/dribbble.png";
+import email from "../../public/assets/socials/sms.png";
 
 const Footer = () => {
   return (

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-scroll';
-import photo1 from '../assets/icons/now-ui-dashboard-react.jpg';
-import photo2 from '../assets/projects/andsfklasd.png';
-import photo3 from '../assets/projects/Screenshot 2023-09-13 at 14.32.29.png';
+import photo1 from '../../public/assets/icons/now-ui-dashboard-react.jpg';
+import photo2 from '../../public/assets/projects/andsfklasd.png';
+import photo3 from '../../public/assets/projects/Screenshot 2023-09-13 at 14.32.29.png';
 
 const Projects = () => {
   const projects = [
