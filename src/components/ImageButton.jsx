@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 
 const images = [
   {
-    url: '../../public/assets/icons/fullstack.jpeg',
+    url: '../assets/icons/fullstack.jpeg',
     title: 'Full Stack',
     width: '25%',
   },
