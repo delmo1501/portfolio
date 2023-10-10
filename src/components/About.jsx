@@ -4,8 +4,6 @@ import photo1 from '../../public/assets/icons/code.png';
 import photo2 from '../../public/assets/icons/output-onlinepngtools.png';
 import photo3 from '../../public/assets/icons/output-onlinepngtools (1).png';
 import photo4 from '../../public/assets/icons/git-repo.png';
-import MyModal from './Modal';
-import Button from '@mui/material/Button';
 import ImageButton from './ImageButton';
 
 
@@ -30,7 +28,7 @@ const About = () => {
 
   
   return (
-    <div className="md:px-10 px-7 sm:-mt-44" id="about">
+    <div className="md:px-10 px-7" id="about">
       <h1 className="text-primary font-semibold text-3xl mt-5">About me:</h1>
       <p className="my-3 text-white md:w-2/3 leading-[2]">
           Argentinian fullstack developer living in Germany. Passionate about

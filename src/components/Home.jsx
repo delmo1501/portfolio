@@ -1,10 +1,10 @@
 import React from 'react';
 import heroImg from '../../public/assets/Willie.png';
-import middleImg from '../../public/assets/icons/output-onlinepngtools (3).jpeg';
+import middleImg from '../../public/assets/icons/MERN.png';
 
 const Home = () => {
     return (
-        <div className='md:px-10 px-7 my-14 bg-[#161616] custom-home' id='home'>
+        <div className='md:px-10 px-7 my-14 bg-[#121213] custom-home' id='home'>
             <div>
                 <div className='flex flex-col md:flex-row items-center justify-between w-full'>
                     {/* image & content */}
