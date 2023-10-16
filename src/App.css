@@ -88,3 +88,40 @@ body {
   color: #47b9ee;
   
 }
+
+.lighting-effect {
+  transition: all 0.3s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+.lighting-effect:hover {
+  cursor: alias;
+}
+.lighting-effect:hover::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(66, 132, 179, 0.15);
+  pointer-events: none;
+  z-index: 1;
+  transform: rotate(45deg);
+  animation: lightingMove 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes lightingMove {
+  0% {
+      transform: translateX(-250%) rotate(45deg);
+  }
+  100% {
+      transform: translateX(0%) rotate(45deg);
+  }
+}
+
+/* Add extra glow on text hover */
+.text-glow:hover {
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #5fb8de, 0 0 20px #444ce0;
+}

@@ -26,7 +26,7 @@ const Header = () => {
             open ? "top-12" : "top-[-490px]"}`}>
           {
             Links.map(link => <li key={link.name} className='md:ml-8 md:my-0 my-7 font-semibold'>
-              <Link to={link.link} activateClass='active' smooth={true} spy={true} className='text-white transition-all duration-500 hover:text-primary'>
+              <Link to={link.link} activateClass='active' smooth={true} spy={true}  className='text-white transition-all duration-500 hover:text-primary lighting-effect text-glow'>
                 {link.name}
               </Link>
             </li>)
