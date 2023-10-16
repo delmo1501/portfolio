@@ -10,6 +10,7 @@ const Contact = () => {
     email: "",
     message: "",
   });
+  const [feedback, setFeedback] = useState("");
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -30,9 +31,11 @@ const Contact = () => {
       if (data.success) {
         // Email sent successfully, you can show a success message or redirect the user.
         console.log("Email sent successfully!");
+        setFeedback("Email sent successfully!");
       } else {
         // Handle the error, e.g., display an error message to the user.
         console.error(data.error);
+        setFeedback("Error sending email. Please try again.");
       }
     } catch (error) {
       console.error("An error occurred while sending the request:", error);
@@ -78,6 +81,7 @@ const Contact = () => {
         </form>
           </div>
       </div>
+      <p>{feedback}</p>
     </div>
   );
 };

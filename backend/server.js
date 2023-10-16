@@ -5,6 +5,9 @@ const bodyParser = require("body-parser");
 const app = express();
 const port = process.env.PORT || 3001;
 
+require('dotenv').config();
+const cors = require('cors');
+app.use(cors());
 // Middleware to parse JSON and URL-encoded form data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -13,8 +16,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const transporter = nodemailer.createTransport({
   service: "Gmail",
   auth: {
-    user: "your-email@gmail.com", // Your Gmail email address
-    pass: "your-password", // Your Gmail password or app-specific password
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
   },
 });
 
