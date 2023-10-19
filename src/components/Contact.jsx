@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+/* eslint-disable arrow-body-style */
+import React, { useState, useRef } from 'react';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import { Modal, Typography } from '@mui/material';
+import { Modal, Typography, Grow } from '@mui/material';
 import { Box } from '@mui/system';
 
 function Contact() {
@@ -12,7 +13,11 @@ function Contact() {
     email: '',
     message: '',
   });
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
+  const modalRef = useRef(null);
+  // eslint-disable-next-line no-unused-vars
+  const [checked, setChecked] = useState(true);
+  // eslint-disable-next-line no-unused-vars
   const [feedback, setFeedback] = useState('');
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -35,6 +40,11 @@ function Contact() {
         console.log('Email sent successfully!');
         setOpen(true);
         setFeedback('Email sent successfully!');
+        setFormData({
+          name: '',
+          email: '',
+          message: '',
+        });
       } else {
         console.error(data.error);
         setOpen(true);
@@ -49,13 +59,14 @@ function Contact() {
   };
   const modalStyle = {
     position: 'absolute',
-    top: '50%',
-    left: '50%',
+    top: '40%',
+    left: '40%',
     transform: 'translate(-50%, -50%)',
     width: 400,
-    bgcolor: '#47b9ee',
-    border: '2px solid rgb(22, 22, 126)',
+    bgcolor: '#8bcfef',
+    border: '8px solid #444ce0',
     boxShadow: 24,
+    borderRadius: 4,
     p: 4,
   };
   return (
@@ -100,17 +111,20 @@ function Contact() {
       </div>
       <div>
         <Modal
-          open={open}
           onClose={handleClose}
           aria-labelledby="modal-modal-title"
           aria-describedby="modal-modal-description"
+          open={open}
+          ref={modalRef}
         >
-          <Box sx={modalStyle}>
-            <Typography display="flex" alignContent="center" alignItems="center" id="modal-modal-title" variant="h6" component="h2">
-              Text in a modal
-              {feedback}
-            </Typography>
-          </Box>
+          <Grow in={open} timeout={800}>
+            <Box sx={modalStyle}>
+              <Typography style={{ fontFamily: 'Raleway, sans-serif' }} display="flex" alignContent="center" justifyContent="center" alignItems="center" id="modal-modal-title" variant="h6" component="h2">
+                {/* {feedback} */}
+                Email sent successfully!!
+              </Typography>
+            </Box>
+          </Grow>
         </Modal>
       </div>
     </div>

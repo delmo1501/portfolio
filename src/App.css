@@ -81,7 +81,7 @@ body {
 .skills.hovered {
   background: rgb(22, 22, 126);
   transform: translateY(-10px); /* Adjust the translation as needed */
-  color: #47b9ee; /* Change to your primary color */
+  color: #47b9ee; /* Change to your primary color */ /* Change to your primary color */
 }
 
 .skills.hovered p {

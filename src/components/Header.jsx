@@ -30,9 +30,10 @@ function Header() {
           {
             Links.map((link) => (
               <li key={link.name} className="md:ml-8 md:my-0 my-7 font-semibold">
-                <Link to={link.link} activateClass="active" smooth spy className="text-white transition-all duration-500 hover:text-primary lighting-effect text-glow">
+                <Link to={link.link} activeClass="active" smooth spy className="text-white transition-all duration-500 hover:text-primary lighting-effect text-glow">
                   {link.name}
                 </Link>
+
               </li>
             ))
           }
