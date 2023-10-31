@@ -13,7 +13,7 @@ function Contact() {
     email: '',
     message: '',
   });
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const modalRef = useRef(null);
   // eslint-disable-next-line no-unused-vars
   const [checked, setChecked] = useState(true);
