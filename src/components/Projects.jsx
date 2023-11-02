@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-scroll';
+import '../App.css';
 import photo1 from '../../public/assets/icons/now-ui-dashboard-react.jpg';
 import photo2 from '../../public/assets/projects/andsfklasd.png';
 import photo3 from '../../public/assets/projects/Screenshot 2023-09-13 at 14.32.29.png';
@@ -38,7 +39,8 @@ function Projects() {
           <div
             // eslint-disable-next-line react/no-array-index-key
             key={index}
-            className="flex flex-col shadow-sm md:w-[343px] bg-[#0c2f60] p-4 rounded"
+            // className="flex flex-col shadow-sm md:w-[343px] bg-[#0c2f60] p-4 rounded"
+            className="project-card"
             style={{
               flex: '1', minWidth: '300px', maxWidth: '343px', height: '100%', flexDirection: 'column', justifyContent: 'space-between',
             }} // Added styles here

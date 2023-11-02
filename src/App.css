@@ -125,3 +125,20 @@ body {
 .text-glow:hover {
   text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #5fb8de, 0 0 20px #444ce0;
 }
+
+/* projects.css */
+.project-card {
+  width: 100%; /* Adjust the width as needed */
+  display: flex;
+  background-color: #0c2f60;
+  border: 1px solid transparent;
+  transition: border 0.3s, box-shadow 0.3s;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+}
+.project-card:hover {
+  border: 3px solid #007bff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
