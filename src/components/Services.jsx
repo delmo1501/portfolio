@@ -1,10 +1,14 @@
 import React from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { JackInTheBox } from 'react-awesome-reveal';
 import services from '../../public/services';
 
 function Services() {
   return (
     <div>
-      <h1 className="text-primary font-semibold text-3xl mt-14">Services</h1>
+      <JackInTheBox direction="left">
+        <h1 className="text-primary font-semibold text-3xl mt-14">Services</h1>
+      </JackInTheBox>
       <div className="grid md:grid-cols-3 my-8 gap-5">
         {services.map(((service) => (
           <div key={service.id} className="service-card flex flex-col justify-center items-center p-6 text-center text-white">

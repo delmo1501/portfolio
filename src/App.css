@@ -121,12 +121,11 @@ body {
   }
 }
 
-/* Add extra glow on text hover */
+/* extra glow on text hover */
 .text-glow:hover {
   text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #5fb8de, 0 0 20px #444ce0;
 }
 
-/* projects.css */
 .project-card {
   width: 100%; /* Adjust the width as needed */
   display: flex;
@@ -141,4 +140,39 @@ body {
 .project-card:hover {
   border: 3px solid #007bff;
   box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+.icon {
+  display: flex;
+  justify-content: space-around;
+  padding: 5%;
+}
+.icon:hover {
+  border: 2px solid #0c2f60;
+  animation: shine 0.5s linear infinite; /* shining animation */
+}
+
+@keyframes shine {
+  0% {
+    background-color: #fff; /* Start with white background */
+  }
+  50% {
+    background-color: #f7f7f7; /* Midway background color */
+  }
+  100% {
+    background-color: #fff; /* End with white background */
+  }
+}
+
+/* tooltip for the mouse */
+.tooltip {
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
 }

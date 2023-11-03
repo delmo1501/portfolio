@@ -16,9 +16,25 @@ function Contact() {
   const [open, setOpen] = useState(false);
   const modalRef = useRef(null);
   // eslint-disable-next-line no-unused-vars
-  const [checked, setChecked] = useState(true);
-  // eslint-disable-next-line no-unused-vars
   const [feedback, setFeedback] = useState('');
+
+  const [activeIcon, setActiveIcon] = useState(null);
+
+  const handleMouseEnter = (iconName) => {
+    setActiveIcon(iconName);
+  };
+
+  const handleMouseLeave = () => {
+    setActiveIcon(null);
+  };
+
+  const iconData = [
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/in/bruno-delmoro-63b92b201/', icon: <LinkedInIcon style={{ fontSize: 40, color: '#0c2f60' }} /> },
+    { name: 'Instagram', href: 'https://instagram.com/bruno.delmo', icon: <InstagramIcon style={{ fontSize: 40, color: '#0c2f60' }} /> },
+    { name: 'GitHub', href: 'https://github.com/delmo1501', icon: <GitHubIcon style={{ fontSize: 40, color: '#0c2f60' }} /> },
+    { name: 'Email', href: 'mailto:delmo123123@gmail.com', icon: <AlternateEmailIcon style={{ fontSize: 40, color: '#0c2f60' }} /> },
+  ];
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -82,18 +98,25 @@ function Contact() {
           </p>
           {/* social icons */}
           <div className="flex ">
-            <a href="https://www.linkedin.com/in/bruno-delmoro-63b92b201/" target="_blank" rel="noreferrer">
-              <LinkedInIcon style={{ fontSize: 40, color: '#0c2f60' }} />
-            </a>
-            <a className="ml-4" href="https://instagram.com/bruno.delmo" target="_blank" rel="noreferrer">
-              <InstagramIcon style={{ fontSize: 40, color: '#0c2f60' }} />
-            </a>
-            <a className="ml-4" href="https://github.com/delmo1501" target="_blank" rel="noreferrer">
-              <GitHubIcon style={{ fontSize: 40, color: '#0c2f60' }} />
-            </a>
-            <a className="ml-4" href="mailto:delmo123123@gmail.com" target="_blank" rel="noreferrer">
-              <AlternateEmailIcon style={{ fontSize: 40, color: '#0c2f60' }} />
-            </a>
+            <div style={{ display: 'flex' }}>
+              {iconData.map((iconInfo) => (
+                <div
+                  className="icon"
+                  key={iconInfo.name}
+                  onMouseEnter={() => handleMouseEnter(iconInfo.name)}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <a href={iconInfo.href} target="_blank" rel="noreferrer">
+                    {iconInfo.icon}
+                  </a>
+                  {activeIcon === iconInfo.name && (
+                  <div className="tooltip" style={{ position: 'absolute', top: '50px' }}>
+                    {iconInfo.name}
+                  </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
         {/* form */}
