@@ -1,5 +1,6 @@
-/* eslint-disable arrow-body-style */
 import React, { useState, useRef } from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { Tooltip as ReactTooltip } from 'react-tooltip';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -18,16 +19,6 @@ function Contact() {
   // eslint-disable-next-line no-unused-vars
   const [feedback, setFeedback] = useState('');
 
-  const [activeIcon, setActiveIcon] = useState(null);
-
-  const handleMouseEnter = (iconName) => {
-    setActiveIcon(iconName);
-  };
-
-  const handleMouseLeave = () => {
-    setActiveIcon(null);
-  };
-
   const iconData = [
     { name: 'LinkedIn', href: 'https://www.linkedin.com/in/bruno-delmoro-63b92b201/', icon: <LinkedInIcon style={{ fontSize: 40, color: '#0c2f60' }} /> },
     { name: 'Instagram', href: 'https://instagram.com/bruno.delmo', icon: <InstagramIcon style={{ fontSize: 40, color: '#0c2f60' }} /> },
@@ -39,6 +30,7 @@ function Contact() {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -70,9 +62,11 @@ function Contact() {
       console.error('An error occurred while sending the request:', error);
     }
   };
+
   const handleClose = () => {
     setOpen(false);
   };
+
   const modalStyle = {
     position: 'absolute',
     top: '40%',
@@ -85,6 +79,7 @@ function Contact() {
     borderRadius: 4,
     p: 4,
   };
+
   return (
     <div className="md:px-10 px-7 my-10" id="contact">
       <div className="flex flex-col md:flex-row">
@@ -98,25 +93,14 @@ function Contact() {
           </p>
           {/* social icons */}
           <div className="flex ">
-            <div style={{ display: 'flex' }}>
-              {iconData.map((iconInfo) => (
-                <div
-                  className="icon"
-                  key={iconInfo.name}
-                  onMouseEnter={() => handleMouseEnter(iconInfo.name)}
-                  onMouseLeave={handleMouseLeave}
-                >
-                  <a href={iconInfo.href} target="_blank" rel="noreferrer">
-                    {iconInfo.icon}
-                  </a>
-                  {activeIcon === iconInfo.name && (
-                  <div className="tooltip" style={{ position: 'absolute', top: '50px' }}>
-                    {iconInfo.name}
-                  </div>
-                  )}
-                </div>
-              ))}
-            </div>
+            {iconData.map((iconInfo) => (
+              <div style={{ padding: '2%' }} key={iconInfo.name}>
+                <a data-tooltip-id="my-tooltip" data-tooltip-content={iconInfo.name} className="icon" href={iconInfo.href} target="_blank" rel="noreferrer">
+                  {iconInfo.icon}
+                </a>
+                <ReactTooltip id="my-tooltip" />
+              </div>
+            ))}
           </div>
         </div>
         {/* form */}
