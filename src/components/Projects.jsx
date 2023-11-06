@@ -4,6 +4,7 @@ import '../App.css';
 import photo1 from '../../public/assets/icons/now-ui-dashboard-react.jpg';
 import photo2 from '../../public/assets/projects/andsfklasd.png';
 import photo3 from '../../public/assets/projects/Screenshot 2023-09-13 at 14.32.29.png';
+import photo4 from '../../public/assets/projects/chat.png';
 
 function Projects() {
   const projects = [
@@ -24,6 +25,11 @@ function Projects() {
       description: 'Airbus buddy ticket system, internal communication',
       photo: photo3,
     },
+    {
+      title: 'Try my live chat',
+      description: 'Trying a live chat with socket.io, Reactjs and Nodejs',
+      photo: photo4,
+    },
   ];
 
   return (
@@ -34,7 +40,7 @@ function Projects() {
         and Im going to include my biggest
         ones, that were for the companies Ive been working.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-5 my-6 items-center justify-center">
+      <div className="grid md:grid-cols-3 my-8 gap-5">
         {projects.map((project, index) => (
           <div
             // eslint-disable-next-line react/no-array-index-key
