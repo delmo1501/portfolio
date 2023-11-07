@@ -1,12 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-scroll';
 import '../App.css';
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
+import Slide from '@mui/material/Slide';
+
+// photos
 import photo1 from '../../public/assets/icons/now-ui-dashboard-react.jpg';
 import photo2 from '../../public/assets/projects/andsfklasd.png';
 import photo3 from '../../public/assets/projects/Screenshot 2023-09-13 at 14.32.29.png';
 import photo4 from '../../public/assets/projects/chat.png';
 
+// eslint-disable-next-line react/jsx-props-no-spreading
+const Transition = React.forwardRef((props, ref) => <Slide direction="up" ref={ref} {...props} />);
+
 function Projects() {
+  const [showModal, setShowModal] = useState(false);
+  const [currentProject, setCurrentProject] = useState(null);
+
   const projects = [
     {
       title: 'Stark',
@@ -32,6 +46,15 @@ function Projects() {
     },
   ];
 
+  const handleCardClick = (event, project) => {
+    event.preventDefault();
+    setCurrentProject(project);
+    setShowModal(true);
+  };
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+  console.log(showModal, currentProject);
   return (
     <div className="md:px-10 px-7 my-8" id="projects">
       <h1 className="text-primary font-semibold text-3xl mt-16">Projects & Experiences:</h1>
@@ -49,6 +72,11 @@ function Projects() {
             style={{
               flex: '1', minWidth: '300px', maxWidth: '343px', height: '100%', flexDirection: 'column', justifyContent: 'space-between',
             }}
+            // eslint-disable-next-line no-restricted-globals
+            onClick={() => handleCardClick(event, project)}
+            onKeyPress={() => handleCardClick(project)}
+            role="button"
+            tabIndex={0}
           >
             <a href={project.photo} target="_blank" rel="noreferrer" className="mb-4">
               <img src={project.photo} alt={project.title} />
@@ -73,6 +101,23 @@ function Projects() {
             </div>
           </div>
         ))}
+        {showModal && (
+        <Dialog PaperProps={{ style: { backgroundColor: 'rgba(0, 123, 255, 0.5)' } }} TransitionComponent={Transition} open={showModal} onClose={handleCloseModal} maxWidth="md" fullWidth>
+          <div style={{
+            display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px', marginRight: '1%',
+          }}
+          >
+            <DialogTitle>{currentProject?.title}</DialogTitle>
+            <IconButton edge="end" color="inherit" onClick={handleCloseModal} aria-label="close">
+              <CloseIcon />
+            </IconButton>
+          </div>
+          <DialogContent style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <img src={currentProject?.photo} alt={currentProject?.title} style={{ width: '40%' }} />
+            <p style={{ flex: 1, marginLeft: '16px' }}>{currentProject?.description}</p>
+          </DialogContent>
+        </Dialog>
+        )}
       </div>
     </div>
   );
