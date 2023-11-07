@@ -40,16 +40,15 @@ function Projects() {
         and Im going to include my biggest
         ones, that were for the companies Ive been working.
       </p>
-      <div className="grid md:grid-cols-3 my-8 gap-5">
+      <div className="grid my-8 gap-5">
         {projects.map((project, index) => (
           <div
             // eslint-disable-next-line react/no-array-index-key
             key={index}
-            // className="flex flex-col shadow-sm md:w-[343px] bg-[#0c2f60] p-4 rounded"
             className="project-card"
             style={{
               flex: '1', minWidth: '300px', maxWidth: '343px', height: '100%', flexDirection: 'column', justifyContent: 'space-between',
-            }} // Added styles here
+            }}
           >
             <a href={project.photo} target="_blank" rel="noreferrer" className="mb-4">
               <img src={project.photo} alt={project.title} />
@@ -57,12 +56,20 @@ function Projects() {
             <h3 className="text-primary font-semibold text-lg">{project.title}</h3>
             <p className="text-white mt-1">{project.description}</p>
             <div className="mt-5">
-              <Link to="about" smooth duration={500} className="btn transition-all duration-500 bg-primary py-2 px-6 rounded text-white hover:bg-white hover:text-primary">
-                About me
-              </Link>
-              <Link to="projects" smooth duration={500} className="btn outline py-1.5 px-9 rounded border-none ml-5 text-white">
-                Projects
-              </Link>
+              {project.title === 'Try my live chat' ? (
+                <a href="https://majestic-brioche-96b829.netlify.app" target="_blank" rel="noreferrer" className="btn transition-all duration-500 bg-primary py-2 px-6 rounded text-white hover:bg-white hover:text-primary">
+                  Lets go
+                </a>
+              ) : (
+                <>
+                  <Link to="about" smooth duration={500} className="btn transition-all duration-500 bg-primary py-2 px-6 rounded text-white hover:bg-white hover:text-primary">
+                    About me
+                  </Link>
+                  <Link to="projects" smooth duration={500} className="btn outline py-1.5 px-9 rounded border-none ml-5 text-white">
+                    Projects
+                  </Link>
+                </>
+              )}
             </div>
           </div>
         ))}

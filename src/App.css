@@ -146,13 +146,33 @@ body {
   }
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .project-card {
   width: 100%; /* Adjust the width as needed */
+  margin: auto;
   display: flex;
   background-color: #0c2f60;
   border: 1px solid transparent;
   transition: border 0.3s, box-shadow 0.3s;
-  flex: 1;
   flex-direction: column;
   align-items: center;
   padding: 15px;
