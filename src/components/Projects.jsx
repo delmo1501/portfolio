@@ -107,15 +107,20 @@ function Projects() {
             display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px', marginRight: '1%',
           }}
           >
-            <DialogTitle style={{ color: 'rgb(0, 255, 251)', border: '2px solid white' }}>{currentProject?.title}</DialogTitle>
-            <IconButton edge="end" color="inherit" onClick={handleCloseModal} aria-label="close" style={{ color: 'rgb(0, 255, 251)', border: '2px solid white' }}>
+            <DialogTitle style={{
+              color: '#0c2f60', textShadow: '0px 0px 4px white', borderRadius: '15px', border: '1px solid withe', backgroundColor: 'rgb(0, 255, 251)', height: '35px', display: 'flex', alignContent: 'center', alignItems: 'center',
+            }}
+            >
+              {currentProject?.title}
+            </DialogTitle>
+            <IconButton edge="end" color="inherit" onClick={handleCloseModal} aria-label="close" style={{ color: 'rgb(0, 255, 251)' }}>
               <CloseIcon />
             </IconButton>
           </div>
           <DialogContent style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <img src={currentProject?.photo} alt={currentProject?.title} style={{ width: '40%', border: '2px solid white' }} />
+            <img src={currentProject?.photo} alt={currentProject?.title} style={{ width: '40%' }} />
             <p style={{
-              flex: 1, marginLeft: '16px', color: 'rgb(0, 255, 251)', border: '2px solid white',
+              flex: 1, marginLeft: '16px', color: 'rgb(0, 255, 251)',
             }}
             >
               {currentProject?.description}
