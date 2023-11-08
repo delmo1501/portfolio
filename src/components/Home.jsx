@@ -3,6 +3,7 @@
 import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Fade } from 'react-awesome-reveal';
+import { Link } from 'react-scroll';
 import heroImg from '../../public/assets/Willie.png';
 import middleImg from '../../public/assets/icons/MERN.png';
 
@@ -19,8 +20,20 @@ function Home() {
               <h1 className="font-semibold md:text-5xl my-4 text-3xl">Bruno Delmoro</h1>
               <p className="md:w-96">Fullstack self-taught developer. I create seamless web experiences for end-users, group worker, sport and music lover.</p>
               <div className="mt-5">
-                <button className="btn transition-all duration-500 bg-primary py-2 px-4 rounded text-white hover:bg-white hover:text-primary">About me</button>
-                <button className="btn outline py-1.5 px-6 rounded border-none ml-5 text-white ">Projects</button>
+                <Link
+                  to="about"
+                  smooth
+                  className="btn transition-all duration-500 bg-primary py-2 px-4 rounded text-white hover:bg-white hover:text-primary"
+                >
+                  About me
+                </Link>
+                <Link
+                  to="projects"
+                  smooth
+                  className="btn outline py-1.5 px-6 rounded border-none ml-5 text-white"
+                >
+                  Projects
+                </Link>
               </div>
             </div>
             {/* img */}

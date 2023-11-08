@@ -5,6 +5,8 @@ import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import IconButton from '@mui/material/IconButton';
+// import SwipeUpIcon from '@mui/icons-material/SwipeUp';
+import AddToHomeScreenIcon from '@mui/icons-material/AddToHomeScreen';
 import CloseIcon from '@mui/icons-material/Close';
 import Slide from '@mui/material/Slide';
 
@@ -102,7 +104,7 @@ function Projects() {
           </div>
         ))}
         {showModal && (
-        <Dialog PaperProps={{ style: { backgroundColor: 'rgba(0, 123, 255, 0.5)' } }} TransitionComponent={Transition} open={showModal} onClose={handleCloseModal} maxWidth="md" fullWidth>
+        <Dialog PaperProps={{ style: { backgroundColor: 'rgba(0, 123, 255, 0.5)', border: '1px solid white' } }} TransitionComponent={Transition} open={showModal} onClose={handleCloseModal} maxWidth="md" fullWidth>
           <div style={{
             display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px', marginRight: '1%',
           }}
@@ -119,13 +121,35 @@ function Projects() {
           </div>
           <DialogContent style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <img src={currentProject?.photo} alt={currentProject?.title} style={{ width: '40%' }} />
-            <p style={{
-              flex: 1, marginLeft: '16px', color: 'rgb(0, 255, 251)',
-            }}
-            >
-              {currentProject?.description}
-
-            </p>
+            {currentProject?.title === 'Try my live chat' ? (
+              <div style={{
+                display: 'flex', flexWrap: 'wrap', flexDirection: 'column-reverse', alignItems: 'center',
+              }}
+              >
+                <p style={{
+                  flex: 1, marginLeft: '16px', color: 'rgb(0, 255, 251)',
+                }}
+                >
+                  So basically we have a live chat with
+                  Socket.io, React.js and Node.js
+                  <br />
+                  The idea is that you click the phone on the top and try it out
+                  <br />
+                  Im still developing so be patient please :)
+                </p>
+                {/* <SwipeUpIcon fontSize="large" color="blue" /> */}
+                <IconButton edge="end" color="inherit" onClick={handleCloseModal} aria-label="close" style={{ color: 'rgb(0, 255, 251)' }}>
+                  <AddToHomeScreenIcon onClick={() => window.open('https://majestic-brioche-96b829.netlify.app', '_blank')} fontSize="large" />
+                </IconButton>
+              </div>
+            ) : (
+              <p style={{
+                flex: 1, marginLeft: '16px', color: 'rgb(0, 255, 251)',
+              }}
+              >
+                {currentProject?.description}
+              </p>
+            )}
           </DialogContent>
         </Dialog>
         )}
