@@ -11,6 +11,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import Slide from '@mui/material/Slide';
 
 // photos
+import { Typography } from '@mui/material';
 import photo1 from '../../public/assets/icons/now-ui-dashboard-react.jpg';
 import photo2 from '../../public/assets/projects/andsfklasd.png';
 import photo3 from '../../public/assets/projects/Screenshot 2023-09-13 at 14.32.29.png';
@@ -104,16 +105,18 @@ function Projects() {
           </div>
         ))}
         {showModal && (
-        <Dialog PaperProps={{ style: { backgroundColor: 'rgba(0, 123, 255, 0.5)', border: '1px solid white' } }} TransitionComponent={Transition} open={showModal} onClose={handleCloseModal} maxWidth="md" fullWidth>
+        <Dialog PaperProps={{ style: { backgroundColor: 'black', border: '1px solid white' } }} TransitionComponent={Transition} open={showModal} onClose={handleCloseModal} maxWidth="md" fullWidth>
           <div style={{
             display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px', marginRight: '1%',
           }}
           >
             <DialogTitle style={{
-              color: '#0c2f60', textShadow: '0px 0px 4px white', borderRadius: '15px', border: '1px solid withe', backgroundColor: 'rgb(0, 255, 251)', height: '35px', display: 'flex', alignContent: 'center', alignItems: 'center',
+              color: 'rgba(0, 123, 255, 0.5)', textShadow: '0px 0px 2px white', height: '35px', display: 'flex', alignContent: 'center', alignItems: 'center',
             }}
             >
-              {currentProject?.title}
+              <Typography variant="h3" component="div" gutterBottom sx={{ borderBottom: '1px solid #000' }}>
+                {currentProject?.title}
+              </Typography>
             </DialogTitle>
             <IconButton edge="end" color="inherit" onClick={handleCloseModal} aria-label="close" style={{ color: 'rgb(0, 255, 251)' }}>
               <CloseIcon />
@@ -144,7 +147,7 @@ function Projects() {
               </div>
             ) : (
               <p style={{
-                flex: 1, marginLeft: '16px', color: 'rgb(0, 255, 251)',
+                flex: 1, marginLeft: '16px', color: 'rgba(0, 123, 255, 0.5)',
               }}
               >
                 {currentProject?.description}

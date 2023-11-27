@@ -12,7 +12,7 @@ function Footer() {
         <p className="hidden sm:block">Fullstack Developer</p>
         <p className="hidden sm:block">Scrum Mastering</p>
         <p className="hidden sm:block">User Experience</p>
-        <p className="hidden sm:block">Passin About Challenges</p>
+        <p className="hidden sm:block">Passion About Challenges</p>
       </div>
       {/* social media */}
       {/* <div className="flex mb-5 justify-center md:justify-start ">
