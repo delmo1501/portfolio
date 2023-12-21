@@ -14,8 +14,8 @@ import Slide from '@mui/material/Slide';
 import { Typography } from '@mui/material';
 import photo1 from '../../public/assets/icons/now-ui-dashboard-react.jpg';
 import photo2 from '../../public/assets/projects/andsfklasd.png';
-import photo3 from '../../public/assets/projects/Screenshot 2023-09-13 at 14.32.29.png';
-import photo4 from '../../public/assets/projects/chat.png';
+import photo3 from '../../public/assets/projects/fourth.png';
+import photo4 from '../../public/assets/projects/astro.avif';
 
 // eslint-disable-next-line react/jsx-props-no-spreading
 const Transition = React.forwardRef((props, ref) => <Slide direction="up" ref={ref} {...props} />);
@@ -43,8 +43,8 @@ function Projects() {
       photo: photo3,
     },
     {
-      title: 'Try my live chat',
-      description: 'Trying a live chat with socket.io, Reactjs and Nodejs',
+      title: 'Learning Astro',
+      description: 'Im creating a multi-page portfolio with Astro to learn more about it, and the islands architecture ',
       photo: photo4,
     },
   ];
@@ -57,7 +57,6 @@ function Projects() {
   const handleCloseModal = () => {
     setShowModal(false);
   };
-  console.log(showModal, currentProject);
   return (
     <div className="md:px-10 px-7 my-8" id="projects">
       <h1 className="text-primary font-semibold text-3xl mt-16">Projects & Experiences:</h1>
@@ -87,8 +86,8 @@ function Projects() {
             <h3 className="text-primary font-semibold text-lg">{project.title}</h3>
             <p className="text-white mt-1">{project.description}</p>
             <div className="mt-5">
-              {project.title === 'Try my live chat' ? (
-                <a href="https://majestic-brioche-96b829.netlify.app" target="_blank" rel="noreferrer" className="btn transition-all duration-500 bg-primary py-2 px-6 rounded text-white hover:bg-white hover:text-primary">
+              {project.title === 'Learning Astro' ? (
+                <a href="https://endearing-centaur-57bad7.netlify.app/" target="_blank" rel="noreferrer" className="btn transition-all duration-500 bg-primary py-2 px-6 rounded text-white hover:bg-white hover:text-primary">
                   Lets go
                 </a>
               ) : (
@@ -124,7 +123,7 @@ function Projects() {
           </div>
           <DialogContent style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <img src={currentProject?.photo} alt={currentProject?.title} style={{ width: '40%' }} />
-            {currentProject?.title === 'Try my live chat' ? (
+            {currentProject?.title === 'Learning Astro' ? (
               <div style={{
                 display: 'flex', flexWrap: 'wrap', flexDirection: 'column-reverse', alignItems: 'center',
               }}
@@ -133,16 +132,15 @@ function Projects() {
                   flex: 1, marginLeft: '16px', color: 'rgb(0, 255, 251)',
                 }}
                 >
-                  So basically we have a live chat with
-                  Socket.io, React.js and Node.js
+                  Do you wanna go and see how Astro is working?
                   <br />
                   The idea is that you click the phone on the top and try it out
                   <br />
-                  Im still developing so be patient please :)
+                  Im still developing so be patient please :
                 </p>
                 {/* <SwipeUpIcon fontSize="large" color="blue" /> */}
                 <IconButton edge="end" color="inherit" onClick={handleCloseModal} aria-label="close" style={{ color: 'rgb(0, 255, 251)' }}>
-                  <AddToHomeScreenIcon onClick={() => window.open('https://majestic-brioche-96b829.netlify.app', '_blank')} fontSize="large" />
+                  <AddToHomeScreenIcon onClick={() => window.open('https://endearing-centaur-57bad7.netlify.app/', '_blank')} fontSize="large" />
                 </IconButton>
               </div>
             ) : (
