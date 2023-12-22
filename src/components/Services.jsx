@@ -11,7 +11,7 @@ function Services() {
     const y = e.clientY - rect.top;
     const left = x < rect.width / 2 ? '-10px' : '10px';
     const top = y < rect.height / 2 ? '-10px' : '10px';
-    setShadows({ ...shadows, [id]: `${left} ${top} 20px rgba(41, 12, 203, 0.8)` });
+    setShadows({ ...shadows, [id]: `${left} ${top} 20px rgba(27, 136, 245, 0.8)` });
   };
 
   return (

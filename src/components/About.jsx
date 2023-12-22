@@ -1,33 +1,40 @@
+/* eslint-disable max-len */
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { useInView } from 'react-intersection-observer';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Fade } from 'react-awesome-reveal';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import Modal from 'react-modal';
 import Services from './Services';
-import photo1 from '../../public/assets/icons/code.png';
-import photo2 from '../../public/assets/icons/output-onlinepngtools.png';
-import photo3 from '../../public/assets/icons/output-onlinepngtools (1).png';
-import photo4 from '../../public/assets/icons/git-repo.png';
 import ImageButton from './ImageButton';
+import ModalContent from './ModalContent';
 
 function About() {
-  const skills = [
-    { name: 'FULL STACK', image: photo1 },
-    { name: 'MAIN STACK', image: photo2 },
-    { name: 'BACK END', image: photo3 },
-    { name: 'REST', image: photo4 },
-  ];
-  const [hoveredIndex, setHoveredIndex] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedSkill, setSelectedSkill] = useState(null);
+  const [ref, inView] = useInView();
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  const handleCardClick = (index) => {
-    setSelectedSkill(index);
-    setIsModalOpen(true);
-  };
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
+  useEffect(() => {
+    const tutorialShown = localStorage.getItem('tutorialShown');
+    if (inView && !tutorialShown) {
+      setModalIsOpen(true);
+    }
 
+    const handleBeforeUnload = () => {
+      localStorage.removeItem('tutorialShown');
+    };
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, [inView]);
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+    localStorage.setItem('tutorialShown', 'true');
+  };
   return (
     <div className="md:px-10 px-7" id="about">
       <div>
@@ -53,7 +60,10 @@ function About() {
         </Fade>
       </div>
       <ImageButton />
-      <Services />
+      <div ref={ref}>
+        <Services />
+      </div>
+      <ModalContent isOpen={modalIsOpen} onRequestClose={closeModal} />
     </div>
   );
 }
