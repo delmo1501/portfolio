@@ -48,7 +48,7 @@ function About() {
             PS: None of the above activities can be performed without my precious mate 🧉🇦🇷
           </p>
           <div className="md:flex my-7 items-center">
-            <div className="text-primary text-8xl font-bold">2+</div>
+            <div className="text-primary text-8xl font-bold">3+</div>
             <p className="text-white text-2xl md:ml-5">
               Years of experience. Specialised in building apps,
               while providing a good customer
