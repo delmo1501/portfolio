@@ -35,7 +35,7 @@ function Contact() {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:3001/send-email', {
+      const response = await fetch('https://portfolio-qg4jn3vnf-delmo1501.vercel.app/api/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -106,7 +106,7 @@ function Contact() {
         {/* form */}
         <div className="md:w-1/2">
           <p className="mt-16 text-white text-2xl mb-6">Contact me, lets make magic together</p>
-          <form action="http://localhost:3001/send-email" method="POST" onSubmit={handleSubmit}>
+          <form action="https://portfolio-qg4jn3vnf-delmo1501.vercel.app/api/send-email" method="POST" onSubmit={handleSubmit}>
             <input type="text" name="name" placeholder="Name:" value={formData.name} onChange={handleChange} className="bg-[#F5F5F5] bg-opacity-10 py-3 px-3 md:w-3/4 w-full rounded " />
             <input type="email" name="email" placeholder="Email:" value={formData.email} onChange={handleChange} className="bg-[#F5F5F5] bg-opacity-10 py-3 px-3 md:w-3/4 w-full rounded my-3" />
             <textarea name="message" id="message" cols="54" rows="4" value={formData.message} onChange={handleChange} className="bg-[#F5F5F5] bg-opacity-10 py-3 px-3 md:w-3/4 w-full rounded mb-2" placeholder="Message:" />
@@ -127,7 +127,6 @@ function Contact() {
           <Grow in={open} timeout={800}>
             <Box sx={modalStyle}>
               <Typography style={{ fontFamily: 'Raleway, sans-serif' }} display="flex" alignContent="center" justifyContent="center" alignItems="center" id="modal-modal-title" variant="h6" component="h2">
-                {/* {feedback} */}
                 Email sent successfully!!
               </Typography>
             </Box>
