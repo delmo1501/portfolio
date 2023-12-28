@@ -3,11 +3,38 @@ import React, { useState } from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
 import Modal from 'react-modal';
+import { Button } from '@mui/material';
 
 Modal.setAppElement('#root');
 
 function ModalContent({ isOpen, onRequestClose }) {
   const [step, setStep] = useState(1);
+  const [shadow, setShadow] = useState('');
+
+  const handleMouseMove = (event) => {
+    const { clientX, clientY, currentTarget } = event;
+    const rect = currentTarget.getBoundingClientRect();
+    const xPos = clientX - rect.left; // x position within the element
+    const yPos = clientY - rect.top; // y position within the element
+    const width = rect.right - rect.left;
+    const height = rect.bottom - rect.top;
+
+    let shadowDirection;
+    if (xPos < width / 2 && yPos < height / 2) {
+      shadowDirection = 'top left';
+    } else if (xPos >= width / 2 && yPos < height / 2) {
+      shadowDirection = 'top right';
+    } else if (xPos < width / 2 && yPos >= height / 2) {
+      shadowDirection = 'bottom left';
+    } else {
+      shadowDirection = 'bottom right';
+    }
+
+    const shadowX = shadowDirection.includes('right') ? 10 : -10;
+    const shadowY = shadowDirection.includes('bottom') ? 10 : -10;
+
+    setShadow(`${shadowX}px ${shadowY}px 20px rgba(27, 136, 245, 0.8)`);
+  };
 
   const nextStep = () => {
     setStep((currentStep) => currentStep + 1);
@@ -27,20 +54,57 @@ function ModalContent({ isOpen, onRequestClose }) {
       <button type="button" onClick={onRequestClose} className="close-button">×</button>
       <div className="modal-body">
         {step === 1 && (
-        <div>
-          We are gonna explain now whats going on with Services
+          <div
+            onMouseMove={handleMouseMove}
+            style={{
+              boxShadow: shadow, display: 'flex', padding: '10px', flexDirection: 'column', alignContent: 'center', alignItems: 'center',
+            }}
+          >
+            <h1 style={{ fontFamily: '-moz-initial', fontSize: '35px', color: 'blue' }}>This is how Services work</h1>
+            <div style={{ fontSize: '2em' }}>↓</div>
+            <div className="animated-text">
+              We use a useState hook to create a shadows state variable.
+            </div>
+            <div className="animated-text">
+              This is an object that stores the shadow styles for each service card.
+            </div>
+          </div>
+        )}
+        {step === 2 && (
+        <div
+          style={{
+            display: 'flex', padding: '10px', flexDirection: 'column', alignContent: 'center', alignItems: 'center',
+          }}
+          className="animated-text"
+        >
+          <h1 style={{ fontFamily: '-moz-initial', fontSize: '35px', color: 'blue' }}>handleMouseMove</h1>
+          <div style={{ fontSize: '2em' }}>↓</div>
+          Event handler thats triggered when the mouse moves, calculating the mouses position relative to the service card.
+          <br />
+          Shadow style = string that represents a CSS box-shadow property, with the horizontal and vertical offsets determined by the mouses position.
+        </div>
+        )}
+        {step === 3 && (
+        <div
+          style={{
+            display: 'flex', padding: '10px', flexDirection: 'column', alignContent: 'center', alignItems: 'center',
+          }}
+          className="animated-text"
+        >
+          <h1 style={{ fontFamily: '-moz-initial', fontSize: '35px', color: 'blue' }}>onMouseMove</h1>
+          <div style={{ fontSize: '2em' }}>↓</div>
+          Each service card has an onMouseMove prop thats set to handleMouseMove(service.id).
+          <br />
           {' '}
           <br />
           {' '}
-          Which uses the useState hook to create a shadows state variable, this is an object that stores the shadow styles for each service card.
+          This means that when the mouse moves over a service card, the handleMouseMove function is called with the id of the service as an argument.
         </div>
         )}
-        {step === 2 && <div>handleMouseMove function => event handler thats triggered when the mouse moves over a service card <br /><br /> This function calculates the mouses position relative to the service card and determines whether the mouse is on the left or right, and top or bottom half of the card. <br /><br /> It then updates the shadows state with a new shadow style for the service card that the mouse is over. The shadow style is a string that represents a CSS box-shadow property, with the horizontal and vertical offsets determined by the mouses position.</div>}
-        {step === 3 && <div>In the JSX returned by the Services component, each service card has an onMouseMove prop that's set to handleMouseMove(service.id).<br /> <br /> This means that when the mouse moves over a service card, the handleMouseMove function is called with the id of the service as an argument.</div>}
       </div>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <button type="button" onClick={prevStep} style={{ visibility: step > 1 ? 'visible' : 'hidden' }}>Previous</button>
-        {step < 3 && <button type="button" onClick={nextStep}>Next</button>}
+        <Button type="button" variant="contained" onClick={prevStep} disabled={step <= 1}>Previous</Button>
+        <Button type="button" variant="contained" onClick={nextStep} disabled={step >= 3}>Next</Button>
       </div>
     </Modal>
   );

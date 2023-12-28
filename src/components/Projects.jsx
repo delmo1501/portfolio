@@ -11,7 +11,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import Slide from '@mui/material/Slide';
 
 // photos
-import { Typography } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import photo1 from '../../public/assets/icons/now-ui-dashboard-react.jpg';
 import photo2 from '../../public/assets/projects/andsfklasd.png';
 import photo3 from '../../public/assets/projects/fourth.png';
@@ -44,7 +44,7 @@ function Projects() {
     },
     {
       title: 'Learning Astro',
-      description: 'Im creating a multi-page portfolio with Astro to learn more about it, and the islands architecture ',
+      description: 'The idea is to tell you my story, by a multi-page portfolio with Astro to learn more about it, and the islands architecture ',
       photo: photo4,
     },
   ];
@@ -91,14 +91,9 @@ function Projects() {
                   Lets go
                 </a>
               ) : (
-                <>
-                  <Link to="about" smooth duration={500} className="btn transition-all duration-500 bg-primary py-2 px-6 rounded text-white hover:bg-white hover:text-primary">
-                    About me
-                  </Link>
-                  <Link to="projects" smooth duration={500} className="btn outline py-1.5 px-9 rounded border-none ml-5 text-white">
-                    Projects
-                  </Link>
-                </>
+                <Button smooth duration={500} className="btn transition-all duration-500 bg-primary py-2 px-6 rounded text-white hover:bg-white hover:text-primary">
+                  Display Modal
+                </Button>
               )}
             </div>
           </div>
@@ -132,11 +127,11 @@ function Projects() {
                   flex: 1, marginLeft: '16px', color: 'rgb(0, 255, 251)',
                 }}
                 >
-                  Do you wanna go and see how Astro is working?
+                  Do you wanna go and see how Astro is working? Also my story!
                   <br />
                   The idea is that you click the phone on the top and try it out
                   <br />
-                  Im still developing so be patient please :
+                  Im still developing so be patient please
                 </p>
                 {/* <SwipeUpIcon fontSize="large" color="blue" /> */}
                 <IconButton edge="end" color="inherit" onClick={handleCloseModal} aria-label="close" style={{ color: 'rgb(0, 255, 251)' }}>
