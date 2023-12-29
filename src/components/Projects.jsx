@@ -8,6 +8,8 @@ import IconButton from '@mui/material/IconButton';
 import AddToHomeScreenIcon from '@mui/icons-material/AddToHomeScreen';
 import CloseIcon from '@mui/icons-material/Close';
 import Slide from '@mui/material/Slide';
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 // photos
 import { Button, Typography } from '@mui/material';
@@ -22,6 +24,9 @@ const Transition = React.forwardRef((props, ref) => <Slide direction="up" ref={r
 function Projects() {
   const [showModal, setShowModal] = useState(false);
   const [currentProject, setCurrentProject] = useState(null);
+
+  const theme = useTheme();
+  const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
   const projects = [
     {
@@ -98,7 +103,26 @@ function Projects() {
           </div>
         ))}
         {showModal && (
-        <Dialog PaperProps={{ style: { backgroundColor: 'black', border: '1px solid white' } }} TransitionComponent={Transition} open={showModal} onClose={handleCloseModal} maxWidth="md" fullWidth>
+        <Dialog
+          PaperProps={{
+            style: {
+              backgroundColor: 'black',
+              border: '1px solid white',
+              width: fullScreen ? '100%' : 'auto',
+              maxWidth: fullScreen ? '400px' : 'auto',
+              maxHeight: fullScreen ? '40vh' : 'auto',
+              padding: '10px',
+              overflow: 'auto',
+              boxSizing: 'border-box',
+            },
+          }}
+          TransitionComponent={Transition}
+          open={showModal}
+          onClose={handleCloseModal}
+          maxWidth="md"
+          fullWidth
+          fullScreen={fullScreen}
+        >
           <div style={{
             display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px', marginRight: '1%',
           }}
@@ -107,7 +131,7 @@ function Projects() {
               color: 'rgba(0, 123, 255, 0.5)', textShadow: '0px 0px 2px white', height: '35px', display: 'flex', alignContent: 'center', alignItems: 'center',
             }}
             >
-              <Typography variant="h3" component="div" gutterBottom sx={{ borderBottom: '1px solid #000' }}>
+              <Typography variant={fullScreen ? 'h6' : 'h3'} component="div" gutterBottom sx={{ borderBottom: '1px solid #000' }}>
                 {currentProject?.title}
               </Typography>
             </DialogTitle>
@@ -115,7 +139,10 @@ function Projects() {
               <CloseIcon />
             </IconButton>
           </div>
-          <DialogContent style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <DialogContent style={{
+            maxWidth: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+          }}
+          >
             <img src={currentProject?.photo} alt={currentProject?.title} style={{ width: '40%' }} />
             {currentProject?.title === 'Learning Astro' ? (
               <div style={{
