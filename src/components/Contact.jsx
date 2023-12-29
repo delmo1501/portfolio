@@ -35,7 +35,7 @@ function Contact() {
     e.preventDefault();
 
     try {
-      const response = await fetch('https://portfolio-qg4jn3vnf-delmo1501.vercel.app/api/send-email', {
+      const response = await fetch('https://portfolio-delmo1501.vercel.app/api/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
