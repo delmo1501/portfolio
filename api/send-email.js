@@ -1,7 +1,8 @@
-// api/send-email.js
-const nodemailer = require('nodemailer');
-require('dotenv').config();
+/* eslint-disable import/no-import-module-exports */
+import nodemailer from 'nodemailer';
+import { config } from 'dotenv';
 
+config();
 // Create a nodemailer transporter
 const transporter = nodemailer.createTransport({
   service: 'Gmail',
@@ -11,7 +12,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-module.exports = (req, res) => {
+export default (req, res) => {
   console.log('Function called');
   console.log('Request method:', req.method);
   console.log('Request body:', req.body);
