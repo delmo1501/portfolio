@@ -12,6 +12,21 @@ const transporter = nodemailer.createTransport({
 });
 
 module.exports = (req, res) => {
+  console.log('Function called');
+  console.log('Request method:', req.method);
+  console.log('Request body:', req.body);
+
+  // Check if the request method is OPTIONS
+  if (req.method === 'OPTIONS') {
+    // Respond with a 200 status code and the appropriate CORS headers
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    res.status(200).end();
+    return;
+  }
+
+  // Check if the request method is POST
   if (req.method === 'POST') {
     const { name, email, message } = req.body;
     const mailOptions = {
