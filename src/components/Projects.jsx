@@ -150,7 +150,7 @@ function Projects() {
               }}
               >
                 <p style={{
-                  flex: 1, marginLeft: '16px', color: 'rgb(0, 255, 251)',
+                  flex: 1, marginLeft: '16px', color: 'rgba(0, 123, 255, 0.841)',
                 }}
                 >
                   Do you wanna go and see how Astro is working? Also my story!
@@ -160,13 +160,13 @@ function Projects() {
                   Im still developing so be patient please
                 </p>
                 {/* <SwipeUpIcon fontSize="large" color="blue" /> */}
-                <IconButton edge="end" color="inherit" onClick={handleCloseModal} aria-label="close" style={{ color: 'rgb(0, 255, 251)' }}>
+                <IconButton edge="end" color="inherit" onClick={handleCloseModal} aria-label="close" style={{ color: 'rgba(0, 123, 255, 0.841)' }}>
                   <AddToHomeScreenIcon onClick={() => window.open('https://endearing-centaur-57bad7.netlify.app/', '_blank')} fontSize="large" />
                 </IconButton>
               </div>
             ) : (
               <p style={{
-                flex: 1, marginLeft: '16px', color: 'rgba(0, 123, 255, 0.5)',
+                flex: 1, marginLeft: '16px', color: 'rgba(0, 123, 255, 0.841)',
               }}
               >
                 {currentProject?.description}
