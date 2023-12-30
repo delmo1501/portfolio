@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/button-has-type */
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
@@ -7,9 +8,9 @@ import { Link } from 'react-scroll';
 import heroImg from '../../public/assets/Willie.png';
 import middleImg from '../../public/assets/icons/MERN.png';
 
-function Home() {
+function Home({ mode }) {
   return (
-    <div className="md:px-10 px-7 my-14 bg-[#121213] custom-home" id="home">
+    <div className="md:px-10 px-7 my-14 custom-home" id="home">
       <div>
         <Fade direction="right">
           <div className="flex flex-col md:flex-row items-center justify-between w-full">
@@ -48,7 +49,7 @@ function Home() {
       </div>
       <br />
       <br />
-      <div className="h-24 bg-[#13131c] w-full mx-auto absolute left-0 hidden md:block" />
+      <div className="h-24 w-full mx-auto absolute left-0 hidden md:block" style={{ backgroundColor: mode === 'light' ? 'rgba(11, 190, 106, 0.662)' : '#13131c' }} />
     </div>
   );
 }

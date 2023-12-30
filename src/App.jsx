@@ -17,6 +17,10 @@ function App() {
   const theme = createTheme({
     palette: {
       mode,
+      background: {
+        default: mode === 'light' ? 'rgba(11, 190, 106, 0.662)' : 'text-primary',
+        paper: mode === 'light' ? 'rgba(11, 190, 106, 0.662)' : 'text-primary',
+      },
     },
   });
 
@@ -31,9 +35,9 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <Header toggleMode={toggleMode} mode={mode} />
       <div className="max-w-7xl mx-auto">
-        <Header toggleMode={toggleMode} />
-        <Home />
+        <Home toggleMode={toggleMode} mode={mode} />
         <About />
         <Projects />
         <Contact />
