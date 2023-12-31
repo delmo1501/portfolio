@@ -18,8 +18,8 @@ function App() {
     palette: {
       mode,
       background: {
-        default: mode === 'light' ? 'rgba(11, 190, 106, 0.662)' : 'text-primary',
-        paper: mode === 'light' ? 'rgba(11, 190, 106, 0.662)' : 'text-primary',
+        default: mode === 'light' ? 'rgba(203, 214, 211, 0.715)' : 'text-primary',
+        paper: mode === 'light' ? 'rgba(203, 214, 211, 0.715)' : 'text-primary',
       },
     },
   });
@@ -38,7 +38,7 @@ function App() {
       <Header toggleMode={toggleMode} mode={mode} />
       <div className="max-w-7xl mx-auto">
         <Home toggleMode={toggleMode} mode={mode} />
-        <About />
+        <About toggleMode={toggleMode} mode={mode} />
         <Projects />
         <Contact />
         <Footer />

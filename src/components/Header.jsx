@@ -67,10 +67,10 @@ function Header({ toggleMode, mode }) {
   }));
 
   return (
-    <div className="pl-20 pr-20 w-full max-w-7x1" style={{ backgroundColor: mode === 'light' ? 'rgba(11, 190, 106, 0.662)' : 'inherit' }}>
+    <div className="pl-20 pr-20 w-full max-w-7x1" style={{ backgroundColor: mode === 'light' ? 'rgba(243, 249, 247, 0.715)' : 'inherit' }}>
       <div className="md:flex items-center justify-between py-4 md:px-10 px-7">
         <div className="font-bold text-2xl cursor-pointer flex items-center gap-1">
-          <span className="text-primary hover:text-white">
+          <span className="hover:text-white text-primary">
             Bruno Delmoro
           </span>
         </div>
@@ -88,7 +88,7 @@ function Header({ toggleMode, mode }) {
                   activeClass="active"
                   smooth
                   spy
-                  className={`transition-all duration-500 hover:text-primary lighting-effect text-glow ${mode === 'light' ? 'text-primary' : 'text-white'}`}
+                  className="transition-all duration-500 hover:text-primary lighting-effect text-glow text-primary"
                 >
                   {link.name}
                 </Link>
