@@ -8,7 +8,8 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import { Modal, Typography, Grow } from '@mui/material';
 import { Box } from '@mui/system';
 
-function Contact() {
+// eslint-disable-next-line react/prop-types
+function Contact({ mode }) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -81,14 +82,14 @@ function Contact() {
   };
 
   return (
-    <div className="md:px-10 px-7 my-10" id="contact">
+    <div style={{ paddingBottom: mode === 'light' ? '20px' : '0px', borderRadius: '15px', backgroundColor: mode === 'light' ? 'rgba(243, 249, 247, 0.715)' : 'inherit' }} className="md:px-10 px-7 my-10" id="contact">
       <div className="flex flex-col md:flex-row">
         {/* text and icons */}
         <div className="md:w-1/2">
-          <h1 className="text-primary font-semibold text-3xl mt-16">
+          <h1 style={{ color: mode === 'light' ? '#0c2f60' : 'white' }} className=" font-semibold text-3xl mt-16">
             Connect with me:
           </h1>
-          <p className="my-3 text-white md:w-3/4 leading-[2]">
+          <p style={{ color: mode === 'light' ? '#0c2f60' : 'white' }} className="my-3 text-white md:w-3/4 leading-[2]">
             Interesting on me? Let me know
           </p>
           {/* social icons */}
@@ -105,12 +106,12 @@ function Contact() {
         </div>
         {/* form */}
         <div className="md:w-1/2">
-          <p className="mt-16 text-white text-2xl mb-6">Contact me, lets make magic together</p>
+          <p style={{ color: mode === 'light' ? '#0c2f60' : 'white' }} className="mt-16  text-2xl mb-6">Contact me, lets make magic together</p>
           <form action="https://portfolio-qg4jn3vnf-delmo1501.vercel.app/api/send-email" method="POST" onSubmit={handleSubmit}>
-            <input type="text" name="name" placeholder="Name:" value={formData.name} onChange={handleChange} className="bg-[#F5F5F5] bg-opacity-10 py-3 px-3 md:w-3/4 w-full rounded " />
-            <input type="email" name="email" placeholder="Email:" value={formData.email} onChange={handleChange} className="bg-[#F5F5F5] bg-opacity-10 py-3 px-3 md:w-3/4 w-full rounded my-3" />
-            <textarea name="message" id="message" cols="54" rows="4" value={formData.message} onChange={handleChange} className="bg-[#F5F5F5] bg-opacity-10 py-3 px-3 md:w-3/4 w-full rounded mb-2" placeholder="Message:" />
-            <button type="submit" className="btn transition-all duration-500 bg-primary py-2 px-12 rounded text-white hover:bg-white hover:text-primary block">
+            <input type="text" name="name" placeholder="Name:" value={formData.name} onChange={handleChange} className={`mb-3 py-3 bg-opacity-10 px-3 md:w-3/4 w-full rounded ${mode === 'light' ? 'bg-[rgba(203,214,211,0.715)]' : 'bg-[#F5F5F5]'}`} />
+            <input type="email" name="email" placeholder="Email:" value={formData.email} onChange={handleChange} className={`mb-3 py-3 bg-opacity-10 px-3 md:w-3/4 w-full rounded ${mode === 'light' ? 'bg-[rgba(203,214,211,0.715)]' : 'bg-[#F5F5F5]'}`} />
+            <textarea name="message" id="message" cols="54" rows="4" value={formData.message} onChange={handleChange} className={`mb-3 py-3 bg-opacity-10 px-3 md:w-3/4 w-full rounded ${mode === 'light' ? 'bg-[rgba(203,214,211,0.715)]' : 'bg-[#F5F5F5]'}`} placeholder="Message:" />
+            <button type="submit" className={`btn transition-all duration-500 py-2 px-12 rounded block ${mode === 'light' ? 'bg-[rgba(203,214,211,0.715)] text-primary' : 'bg-primary text-white'}`}>
               Send
             </button>
           </form>

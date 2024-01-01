@@ -21,7 +21,8 @@ import photo4 from '../../public/assets/projects/astro.avif';
 // eslint-disable-next-line react/jsx-props-no-spreading
 const Transition = React.forwardRef((props, ref) => <Slide direction="up" ref={ref} {...props} />);
 
-function Projects() {
+// eslint-disable-next-line react/prop-types
+function Projects({ mode }) {
   const [showModal, setShowModal] = useState(false);
   const [currentProject, setCurrentProject] = useState(null);
 
@@ -62,13 +63,23 @@ function Projects() {
     setShowModal(false);
   };
   return (
-    <div className="md:px-10 px-7 my-8" id="projects">
-      <h1 className="text-primary font-semibold text-3xl mt-16">Projects & Experiences:</h1>
-      <p className="my-3 text-white md:w-3/4 leading-[2]">
-        I have worked on many projects over the course of being a System Developer,
-        and Im going to include my biggest
-        ones, that were for the companies Ive been working.
-      </p>
+    <div
+      className="md:px-10 pr-7 pl-7 my-8"
+      id="projects"
+    >
+      <div
+        className="md:px-10 px-7 my-10 pt-1 pb-6"
+        style={{
+          borderRadius: '15px', backgroundColor: mode === 'light' ? 'rgba(243, 249, 247, 0.715)' : 'inherit',
+        }}
+      >
+        <h1 className="text-primary font-semibold text-3xl mt-16">Projects & Experiences:</h1>
+        <p style={{ color: mode === 'light' ? '#0c2f60' : 'white' }} className="my-3  md:w-3/4 leading-[2]">
+          I have worked on many projects over the course of being a System Developer,
+          and Im going to include my biggest
+          ones, that were for the companies Ive been working.
+        </p>
+      </div>
       <div className="grid my-8 gap-5">
         {projects.map((project, index) => (
           <div

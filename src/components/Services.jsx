@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { JackInTheBox } from 'react-awesome-reveal';
 import services from '../../public/services';
 
-function Services() {
+// eslint-disable-next-line no-empty-pattern, react/prop-types
+function Services({ mode }) {
   const [shadows, setShadows] = useState({});
 
   const handleMouseMove = (id) => (e) => {
@@ -24,12 +25,12 @@ function Services() {
           <article
             key={service.id}
             onMouseMove={handleMouseMove(service.id)}
-            style={{ boxShadow: shadows[service.id] || '' }}
-            className="service-card flex flex-col justify-center items-center p-6 text-center text-white"
+            style={{ backgroundColor: mode === 'light' ? '#0c2f60' : 'inherit', boxShadow: shadows[service.id] || '' }}
+            className="service-card flex flex-col justify-center items-center p-6 text-center"
           >
             <img src={service.image} alt="" className="mb-3" />
-            <h6 className="text-2xl mb-4">{service.name}</h6>
-            <p className="text-base">{service.description}</p>
+            <h6 className="text-white text-2xl mb-4">{service.name}</h6>
+            <p className="text-white text-base">{service.description}</p>
           </article>
         ))}
       </div>

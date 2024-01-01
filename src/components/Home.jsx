@@ -31,7 +31,8 @@ function Home({ mode }) {
                 <Link
                   to="projects"
                   smooth
-                  className="btn outline py-1.5 px-6 rounded border-none ml-5 text-white"
+                  className="btn outline py-1.5 px-6 rounded border-none ml-5"
+                  style={{ color: mode === 'light' ? '#0c2f60' : 'white' }}
                 >
                   Projects
                 </Link>

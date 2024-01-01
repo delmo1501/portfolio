@@ -39,8 +39,8 @@ function App() {
       <div className="max-w-7xl mx-auto">
         <Home toggleMode={toggleMode} mode={mode} />
         <About toggleMode={toggleMode} mode={mode} />
-        <Projects />
-        <Contact />
+        <Projects toggleMode={toggleMode} mode={mode} />
+        <Contact toggleMode={toggleMode} mode={mode} />
         <Footer />
       </div>
     </ThemeProvider>
