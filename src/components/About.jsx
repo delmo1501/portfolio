@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable max-len */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
@@ -11,7 +12,7 @@ import Services from './Services';
 import ImageButton from './ImageButton';
 import ModalContent from './ModalContent';
 
-function About() {
+function About({ toggleMode, mode }) {
   const [ref, inView] = useInView();
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -59,7 +60,7 @@ function About() {
           </div>
         </Fade>
       </div>
-      <ImageButton />
+      <ImageButton toggleMode={toggleMode} mode={mode} />
       <div ref={ref}>
         <Services />
       </div>
