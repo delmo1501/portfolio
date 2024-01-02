@@ -60,12 +60,12 @@ function ModalContent({ isOpen, onRequestClose }) {
               boxShadow: shadow, display: 'flex', padding: '10px', flexDirection: 'column', alignContent: 'center', alignItems: 'center',
             }}
           >
-            <h1 style={{ fontFamily: '-moz-initial', fontSize: '35px', color: 'blue' }}>This is how Services work</h1>
-            <div style={{ fontSize: '2em' }}>↓</div>
-            <div className="animated-text">
+            <h1 style={{ fontFamily: '-moz-initial', fontSize: '35px', color: 'blue' }}>This is how Services shadow work</h1>
+            <div style={{ color: 'blue', fontSize: '2em' }}>↓</div>
+            <div className="text-black animated-text">
               We use a useState hook to create a shadows state variable.
             </div>
-            <div className="animated-text">
+            <div className="text-black animated-text">
               This is an object that stores the shadow styles for each service card.
             </div>
           </div>
@@ -73,12 +73,12 @@ function ModalContent({ isOpen, onRequestClose }) {
         {step === 2 && (
         <div
           style={{
-            display: 'flex', padding: '10px', flexDirection: 'column', alignContent: 'center', alignItems: 'center',
+            color: 'black', display: 'flex', padding: '10px', flexDirection: 'column', alignContent: 'center', alignItems: 'center',
           }}
           className="animated-text"
         >
           <h1 style={{ fontFamily: '-moz-initial', fontSize: '35px', color: 'blue' }}>handleMouseMove</h1>
-          <div style={{ fontSize: '2em' }}>↓</div>
+          <div style={{ color: 'blue', fontSize: '2em' }}>↓</div>
           Event handler thats triggered when the mouse moves, calculating the mouses position relative to the service card.
           <br />
           Shadow style = string that represents a CSS box-shadow property, with the horizontal and vertical offsets determined by the mouses position.
@@ -87,12 +87,12 @@ function ModalContent({ isOpen, onRequestClose }) {
         {step === 3 && (
         <div
           style={{
-            display: 'flex', padding: '10px', flexDirection: 'column', alignContent: 'center', alignItems: 'center',
+            color: 'black', display: 'flex', padding: '10px', flexDirection: 'column', alignContent: 'center', alignItems: 'center',
           }}
           className="animated-text"
         >
           <h1 style={{ fontFamily: '-moz-initial', fontSize: '35px', color: 'blue' }}>onMouseMove</h1>
-          <div style={{ fontSize: '2em' }}>↓</div>
+          <div style={{ color: 'blue', fontSize: '2em' }}>↓</div>
           Each service card has an onMouseMove prop thats set to handleMouseMove(service.id).
           <br />
           {' '}
