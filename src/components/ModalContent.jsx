@@ -51,7 +51,7 @@ function ModalContent({ isOpen, onRequestClose }) {
       contentLabel="Tutorial Modal"
       className="modal-content"
     >
-      <button type="button" onClick={onRequestClose} className="close-button">×</button>
+      <button type="button" onClick={onRequestClose} className="text-black close-button">×</button>
       <div className="modal-body">
         {step === 1 && (
           <div
@@ -103,8 +103,30 @@ function ModalContent({ isOpen, onRequestClose }) {
         )}
       </div>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <Button type="button" variant="contained" onClick={prevStep} disabled={step <= 1}>Previous</Button>
-        <Button type="button" variant="contained" onClick={nextStep} disabled={step >= 3}>Next</Button>
+        <Button
+          type="button"
+          variant="contained"
+          onClick={prevStep}
+          disabled={step <= 1}
+          style={{
+            opacity: step <= 1 ? 0.5 : 1,
+            backgroundColor: step <= 1 ? '#888' : undefined,
+          }}
+        >
+          Previous
+        </Button>
+        <Button
+          type="button"
+          variant="contained"
+          onClick={nextStep}
+          disabled={step >= 3}
+          style={{
+            opacity: step >= 3 ? 0.5 : 1,
+            backgroundColor: step >= 3 ? '#888' : undefined,
+          }}
+        >
+          Next
+        </Button>
       </div>
     </Modal>
   );
