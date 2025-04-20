@@ -317,3 +317,200 @@ body {
 .test {
   color: rgba(203, 214, 211, 0.715)
 }
+
+/* Tech Galaxy - Modern Tech Stack Display */
+.tech-galaxy {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.tech-group {
+  position: relative;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tech-category {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #007bff;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px 12px;
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 10px rgba(0, 123, 255, 0.2);
+}
+
+.tech-icons-container {
+  position: relative;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.tech-icon-wrapper {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  transition: all 0.3s ease;
+  animation: floatAround linear infinite;
+}
+
+.tech-icon-wrapper:hover {
+  transform: scale(1.2) !important;
+  z-index: 20;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(71, 185, 238, 0.8);
+}
+
+.tech-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.tech-icon-wrapper:hover .tech-icon-img {
+  transform: rotate(-10deg) scale(1.1);
+}
+
+/* Frontend group */
+.tech-group:nth-child(1) .tech-icon-wrapper:nth-child(1) {
+  animation-name: orbit1;
+}
+.tech-group:nth-child(1) .tech-icon-wrapper:nth-child(2) {
+  animation-name: orbit2;
+}
+.tech-group:nth-child(1) .tech-icon-wrapper:nth-child(3) {
+  animation-name: orbit3;
+}
+
+/* Backend group */
+.tech-group:nth-child(2) .tech-icon-wrapper:nth-child(1) {
+  animation-name: orbit4;
+}
+.tech-group:nth-child(2) .tech-icon-wrapper:nth-child(2) {
+  animation-name: orbit5;
+}
+.tech-group:nth-child(2) .tech-icon-wrapper:nth-child(3) {
+  animation-name: orbit6;
+}
+
+/* DevOps group */
+.tech-group:nth-child(3) .tech-icon-wrapper:nth-child(1) {
+  animation-name: orbit7;
+}
+.tech-group:nth-child(3) .tech-icon-wrapper:nth-child(2) {
+  animation-name: orbit8;
+}
+.tech-group:nth-child(3) .tech-icon-wrapper:nth-child(3) {
+  animation-name: orbit9;
+}
+
+/* Orbital animations - each with unique paths */
+@keyframes orbit1 {
+  0% { left: 20%; top: 0; }
+  25% { left: 30%; top: 20px; }
+  50% { left: 40%; top: 0; }
+  75% { left: 50%; top: -20px; }
+  100% { left: 60%; top: 0; }
+}
+
+@keyframes orbit2 {
+  0% { left: 45%; top: 10px; }
+  25% { left: 55%; top: -10px; }
+  50% { left: 65%; top: 10px; }
+  75% { left: 55%; top: 30px; }
+  100% { left: 45%; top: 10px; }
+}
+
+@keyframes orbit3 {
+  0% { left: 70%; top: 0; }
+  25% { left: 60%; top: 15px; }
+  50% { left: 50%; top: 0; }
+  75% { left: 40%; top: -15px; }
+  100% { left: 30%; top: 0; }
+}
+
+@keyframes orbit4 {
+  0% { left: 25%; top: 10px; }
+  25% { left: 35%; top: -10px; }
+  50% { left: 45%; top: 10px; }
+  75% { left: 35%; top: 30px; }
+  100% { left: 25%; top: 10px; }
+}
+
+@keyframes orbit5 {
+  0% { left: 50%; top: -10px; }
+  25% { left: 60%; top: 10px; }
+  50% { left: 70%; top: -10px; }
+  75% { left: 60%; top: -30px; }
+  100% { left: 50%; top: -10px; }
+}
+
+@keyframes orbit6 {
+  0% { left: 75%; top: 5px; }
+  25% { left: 65%; top: 25px; }
+  50% { left: 55%; top: 5px; }
+  75% { left: 65%; top: -15px; }
+  100% { left: 75%; top: 5px; }
+}
+
+@keyframes orbit7 {
+  0% { left: 30%; top: -5px; }
+  25% { left: 40%; top: 15px; }
+  50% { left: 50%; top: -5px; }
+  75% { left: 40%; top: -25px; }
+  100% { left: 30%; top: -5px; }
+}
+
+@keyframes orbit8 {
+  0% { left: 55%; top: 0; }
+  25% { left: 65%; top: -20px; }
+  50% { left: 75%; top: 0; }
+  75% { left: 65%; top: 20px; }
+  100% { left: 55%; top: 0; }
+}
+
+@keyframes orbit9 {
+  0% { left: 70%; top: -10px; }
+  25% { left: 60%; top: 10px; }
+  50% { left: 50%; top: -10px; }
+  75% { left: 40%; top: -30px; }
+  100% { left: 30%; top: -10px; }
+}
+
+/* Add responsive adjustments */
+@media (max-width: 768px) {
+  .tech-galaxy {
+    gap: 1.5rem;
+  }
+  
+  .tech-group {
+    height: 80px;
+  }
+  
+  .tech-icons-container {
+    height: 60px;
+  }
+  
+  .tech-icon-wrapper {
+    width: 40px;
+    height: 40px;
+  }
+}

@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import React, { useState } from 'react';
 import { JackInTheBox } from 'react-awesome-reveal';
 import services from '../../public/services';

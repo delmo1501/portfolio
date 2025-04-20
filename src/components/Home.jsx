@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/button-has-type */
 /* eslint-disable react/no-unescaped-entities */
@@ -24,7 +25,7 @@ function Home({ mode }) {
                 <Link
                   to="about"
                   smooth
-                  className="btn transition-all duration-500 bg-primary py-2 px-4 rounded text-white hover:bg-white hover:text-primary"
+                  className="btn transition-all duration-500 bg-primary py-2 px-4 rounded text-white hover:bg-white hover:text-primary hover:border-black hover:border-2"
                 >
                   About me
                 </Link>

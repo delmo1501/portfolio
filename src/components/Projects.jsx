@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import React, { useState } from 'react';
 import '../App.css';
 import Dialog from '@mui/material/Dialog';
@@ -33,13 +34,13 @@ function Projects({ mode }) {
     {
       title: 'Stark',
       description:
-        'Project in function of showing a summary and overview of the company, manipulating financial, economic and humanities metrics.',
+        'Project in function of showing a summary and overview of the company, manipulating financial, economic and humanities metrics. Using Nodejs/React and being Scrum Master of a 5 persons team',
       photo: photo1,
     },
     {
       title: 'PPMS - ProServ',
       description:
-        'Recruitment system for sharing candidates, information, metrics between companies like ProServ, Michelin, LGI, etc',
+        'Only developer of a Huge Logistic + Recruitment system for sharing candidates, information, metrics between companies like ProServ, Michelin, LGI. Features like automatic communication through emails, supplier competition for candidate uploading, etc.',
       photo: photo2,
     },
     {
@@ -68,12 +69,12 @@ function Projects({ mode }) {
       id="projects"
     >
       <div
-        className="md:px-10 px-7 my-10 pt-1 pb-6"
+        className="md:px-10 px-7 my-10 pt-1 pb-1"
         style={{
           borderRadius: '15px', backgroundColor: mode === 'light' ? 'rgba(243, 249, 247, 0.715)' : 'inherit',
         }}
       >
-        <h1 className="text-primary font-semibold text-3xl mt-16">Projects & Experiences:</h1>
+        <h1 className="text-primary font-semibold text-3xl mt-5">Projects & Experiences:</h1>
         <p style={{ color: mode === 'light' ? '#0c2f60' : 'white' }} className="my-3  md:w-3/4 leading-[2]">
           I have worked on many projects over the course of being a System Developer,
           and Im going to include my biggest
@@ -98,7 +99,7 @@ function Projects({ mode }) {
             <a href={project.photo} target="_blank" rel="noreferrer" className="mb-4">
               <img src={project.photo} alt={project.title} />
             </a>
-            <h3 className="text-primary font-semibold text-lg">{project.title}</h3>
+            <h3 className="text-primary text-white font-semibold text-lg">{project.title}</h3>
             <p className="text-white mt-1">{project.description}</p>
             <div className="mt-5">
               {project.title === 'Learning Astro' ? (
@@ -114,77 +115,173 @@ function Projects({ mode }) {
           </div>
         ))}
         {showModal && (
-        <Dialog
-          PaperProps={{
-            style: {
-              backgroundColor: 'black',
-              border: '1px solid white',
-              width: fullScreen ? '100%' : 'auto',
-              maxWidth: fullScreen ? '400px' : 'auto',
-              maxHeight: fullScreen ? '40vh' : 'auto',
-              padding: '10px',
-              overflow: 'auto',
-              boxSizing: 'border-box',
-            },
-          }}
-          TransitionComponent={Transition}
-          open={showModal}
-          onClose={handleCloseModal}
-          maxWidth="md"
-          fullWidth
-          fullScreen={fullScreen}
-        >
-          <div style={{
-            display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px', marginRight: '1%',
-          }}
+          <Dialog
+            PaperProps={{
+              style: {
+                backgroundColor: 'rgba(15, 23, 42, 0.95)',
+                backdropFilter: 'blur(8px)',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                borderRadius: '16px',
+                width: fullScreen ? '100%' : '80%',
+                maxWidth: fullScreen ? '100%' : '800px',
+                maxHeight: fullScreen ? '80vh' : '80vh',
+                overflow: 'hidden',
+                boxSizing: 'border-box',
+                boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
+              },
+            }}
+            TransitionComponent={Transition}
+            open={showModal}
+            onClose={handleCloseModal}
+            maxWidth="md"
+            fullWidth
+            fullScreen={fullScreen}
           >
-            <DialogTitle style={{
-              color: 'rgba(0, 123, 255, 0.5)', textShadow: '0px 0px 2px white', height: '35px', display: 'flex', alignContent: 'center', alignItems: 'center',
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
+              height: '100%',
             }}
             >
-              <Typography variant={fullScreen ? 'h6' : 'h3'} component="div" gutterBottom sx={{ borderBottom: '1px solid #000' }}>
-                {currentProject?.title}
-              </Typography>
-            </DialogTitle>
-            <IconButton edge="end" color="inherit" onClick={handleCloseModal} aria-label="close" style={{ color: 'rgb(0, 255, 251)' }}>
-              <CloseIcon />
-            </IconButton>
-          </div>
-          <DialogContent style={{
-            maxWidth: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-          }}
-          >
-            <img src={currentProject?.photo} alt={currentProject?.title} style={{ width: '40%' }} />
-            {currentProject?.title === 'Learning Astro' ? (
+              {/* Header */}
               <div style={{
-                display: 'flex', flexWrap: 'wrap', flexDirection: 'column-reverse', alignItems: 'center',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                padding: '20px 24px',
+                borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
               }}
               >
-                <p style={{
-                  flex: 1, marginLeft: '16px', color: 'rgba(0, 123, 255, 0.841)',
+                <DialogTitle style={{
+                  color: '#fff',
+                  padding: 0,
+                  fontWeight: 600,
                 }}
                 >
-                  Do you wanna go and see how Astro is working? Also my story!
-                  <br />
-                  The idea is that you click the phone on the top and try it out
-                  <br />
-                  Im still developing so be patient please
-                </p>
-                {/* <SwipeUpIcon fontSize="large" color="blue" /> */}
-                <IconButton edge="end" color="inherit" onClick={handleCloseModal} aria-label="close" style={{ color: 'rgba(0, 123, 255, 0.841)' }}>
-                  <AddToHomeScreenIcon onClick={() => window.open('https://endearing-centaur-57bad7.netlify.app/', '_blank')} fontSize="large" />
+                  <Typography variant={fullScreen ? 'h5' : 'h4'} component="div">
+                    {currentProject?.title}
+                  </Typography>
+                </DialogTitle>
+                <IconButton
+                  edge="end"
+                  onClick={handleCloseModal}
+                  aria-label="close"
+                  sx={{
+                    color: 'rgba(255, 255, 255, 0.7)',
+                    '&:hover': {
+                      color: '#fff',
+                      backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                    },
+                  }}
+                >
+                  <CloseIcon />
                 </IconButton>
               </div>
-            ) : (
-              <p style={{
-                flex: 1, marginLeft: '16px', color: 'rgba(0, 123, 255, 0.841)',
+
+              {/* Content */}
+              <DialogContent style={{
+                padding: '24px',
+                display: 'flex',
+                flexDirection: fullScreen ? 'column' : 'row',
+                gap: '24px',
+                overflow: 'auto',
               }}
               >
-                {currentProject?.description}
-              </p>
-            )}
-          </DialogContent>
-        </Dialog>
+                <div style={{
+                  flex: '0 0 auto',
+                  width: fullScreen ? '100%' : '45%',
+                  borderRadius: '12px',
+                  overflow: 'hidden',
+                  boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.3)',
+                }}
+                >
+                  <img
+                    src={currentProject?.photo}
+                    alt={currentProject?.title}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      display: 'block',
+                    }}
+                  />
+                </div>
+
+                <div style={{
+                  flex: '1 1 auto',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                }}
+                >
+                  {currentProject?.title === 'Learning Astro' ? (
+                    <div style={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      height: '100%',
+                    }}
+                    >
+                      <div style={{ flex: '1' }}>
+                        <Typography
+                          variant="body1"
+                          sx={{
+                            color: 'rgba(255, 255, 255, 0.9)',
+                            lineHeight: 1.7,
+                            marginBottom: '20px',
+                          }}
+                        >
+                          Do you want to see how Astro is working? Also my story!
+                        </Typography>
+                        <Typography
+                          variant="body1"
+                          sx={{
+                            color: 'rgba(255, 255, 255, 0.9)',
+                            lineHeight: 1.7,
+                          }}
+                        >
+                          The idea is that you click the button below to try it out.
+                          <br />
+                          Im still developing so be patient please.
+                        </Typography>
+                      </div>
+
+                      <Button
+                        variant="contained"
+                        startIcon={<AddToHomeScreenIcon />}
+                        onClick={() => window.open('https://endearing-centaur-57bad7.netlify.app/', '_blank')}
+                        sx={{
+                          marginTop: '24px',
+                          backgroundColor: '#3b82f6',
+                          color: 'white',
+                          padding: '10px 20px',
+                          borderRadius: '8px',
+                          textTransform: 'none',
+                          fontWeight: 500,
+                          '&:hover': {
+                            backgroundColor: '#2563eb',
+                          },
+                        }}
+                      >
+                        Visit Project
+                      </Button>
+                    </div>
+                  ) : (
+                    <div style={{ height: '100%' }}>
+                      <Typography
+                        variant="body1"
+                        sx={{
+                          color: 'rgba(255, 255, 255, 0.9)',
+                          lineHeight: 1.7,
+                        }}
+                      >
+                        {currentProject?.description}
+                      </Typography>
+                    </div>
+                  )}
+                </div>
+              </DialogContent>
+            </div>
+          </Dialog>
         )}
       </div>
     </div>
