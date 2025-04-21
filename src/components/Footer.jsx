@@ -8,12 +8,12 @@ import React from 'react';
 function Footer() {
   return (
     <div className="md:px-10 px-7 mt-24">
-      <div className="text-white opacity-50 flex flex-col md:flex-row justify-between items-center my-5">
+      <div className="text-primary font-bold opacity-50 flex flex-col md:flex-row justify-between items-center my-5">
         <p>@ Copyright 2023 | Bruno Delmoro</p>
-        <p className="hidden sm:block color-black">Fullstack Developer</p>
-        <p className="hidden sm:block">Scrum Mastering</p>
-        <p className="hidden sm:block">User Experience</p>
-        <p className="hidden sm:block">Passion About Challenges</p>
+        <p className="hidden text-primary font-bold sm:block">Fullstack Developer</p>
+        <p className="hidden text-primary font-bold sm:block">Scrum Mastering</p>
+        <p className="hidden text-primary font-bold sm:block">User Experience</p>
+        <p className="hidden text-primary font-bold sm:block">Passion About Challenges</p>
       </div>
     </div>
   );

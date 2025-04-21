@@ -42,8 +42,8 @@ function App() {
         <About toggleMode={toggleMode} mode={mode} />
         <Projects toggleMode={toggleMode} mode={mode} />
         <Contact toggleMode={toggleMode} mode={mode} />
-        <Footer />
       </div>
+      <Footer />
     </ThemeProvider>
   );
 }
