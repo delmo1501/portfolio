@@ -4,13 +4,14 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Fade } from 'react-awesome-reveal';
+import { useTheme } from '@mui/material';
 import Services from './Services';
 import ImageButton from './ImageButton';
 import ExperienceTimeline from './ExperienceTimeline';
 
 function About({ toggleMode, mode }) {
   const [ref] = useInView();
-
+  const theme = useTheme();
   return (
     <div className="md:px-10 px-7" id="about">
       {/* two‑column grid */}
@@ -19,7 +20,7 @@ function About({ toggleMode, mode }) {
         style={{
           backgroundColor: mode === 'light'
             ? 'rgba(243, 249, 247, 0.715)'
-            : 'inherit',
+            : theme.palette.grey[900],
           borderRadius: '15px',
           marginBottom: mode === 'light' ? '20px' : '0px',
         }}

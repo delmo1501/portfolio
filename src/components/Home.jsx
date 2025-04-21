@@ -6,13 +6,15 @@ import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Fade } from 'react-awesome-reveal';
 import { Link } from 'react-scroll';
+import { useTheme } from '@mui/material';
 import heroImg from '../../public/assets/Willie.png';
 import middleImg from '../../public/assets/icons/MERN.png';
 
 function Home({ mode }) {
+  const theme = useTheme();
   return (
-    <div className="md:px-10 px-7 my-14 custom-home" id="home">
-      <div className="p-10" style={{ borderRadius: '15px', backgroundColor: mode === 'light' ? 'rgba(243, 249, 247, 0.715)' : 'inherit' }}>
+    <div className="md:px-10 px-7 mt-14 custom-home" id="home">
+      <div className="p-10" style={{ borderRadius: '15px', backgroundColor: mode === 'light' ? 'rgba(243, 249, 247, 0.715)' : theme.palette.grey[900] }}>
         <Fade direction="right">
           <div className="flex flex-col md:flex-row items-center justify-between w-full">
             {/* image & content */}
@@ -49,9 +51,6 @@ function Home({ mode }) {
           </div>
         </Fade>
       </div>
-      <br />
-      <br />
-      <div className="h-24 w-full mx-auto absolute left-0 hidden md:block" style={{ backgroundColor: mode === 'light' ? 'rgba(243, 249, 247, 0.715)' : '#13131c' }} />
     </div>
   );
 }

@@ -8,7 +8,7 @@ import { Link } from 'react-scroll';
 import {
   Bars3BottomRightIcon, MoonIcon, SunIcon, XMarkIcon,
 } from '@heroicons/react/24/solid';
-import { Switch, FormControlLabel } from '@mui/material';
+import { Switch, FormControlLabel, useTheme } from '@mui/material';
 import { styled } from '@mui/system';
 
 function Header({ toggleMode, mode }) {
@@ -19,6 +19,7 @@ function Header({ toggleMode, mode }) {
     { name: 'Contact', link: 'contact' },
   ];
   const [open, setOpen] = useState(false);
+  const theme1 = useTheme();
 
   const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     width: 62,
@@ -68,7 +69,7 @@ function Header({ toggleMode, mode }) {
   }));
 
   return (
-    <div className="pl-20 pr-20 w-full max-w-7x1" style={{ backgroundColor: mode === 'light' ? 'rgba(243, 249, 247, 0.715)' : 'inherit' }}>
+    <div className="pl-20 pr-20 w-full max-w-7x1" style={{ backgroundColor: mode === 'light' ? 'rgba(243, 249, 247, 0.715)' : theme1.palette.grey[900] }}>
       <div className="md:flex items-center justify-between py-4 md:px-10 px-7">
         <div className="font-bold text-2xl cursor-pointer flex items-center gap-1">
           <span className="hover:text-white text-primary">
